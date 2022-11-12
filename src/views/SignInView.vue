@@ -19,7 +19,7 @@
 </script>
 <style>
 form {
-    width: 85%;
+    width: 90%;
 }
 
 .inputs {

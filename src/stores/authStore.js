@@ -1,6 +1,7 @@
 import { defineStore } from "pinia"
-import {getAuth, GoogleAuthProvider, signInAnonymously, signInWithPopup, signInWithRedirect} from "firebase/auth"
-import { firebaseApp } from "../firebase"
+import {signOut} from "firebase/auth"
+import { auth } from "../firebase"
+import router from '../router'
 
 export const useAuthStore = defineStore("fireAuth", {
     state: () => ({
@@ -12,6 +13,12 @@ export const useAuthStore = defineStore("fireAuth", {
         async signIn() {
             console.log("sign in clicked")
             this.isLoggedIn = true
+        },
+        logOut(){
+            signOut(auth).then(()=> {
+                this.isLoggedIn = false
+                router.push('/')
+            })
         }
     }
 })

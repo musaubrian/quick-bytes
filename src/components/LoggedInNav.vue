@@ -28,7 +28,8 @@
             <li class="p-2 mt-3 border-2 rounded-md border-orange-400 inline-flex items-center justify-center w-6/12">
                 <RouterLink to="/add">Add recipes</RouterLink>
             </li>
-            <li class="p-2 mt-3 mb-3 bg-orange-400 rounded-md inline-flex items-center justify-center w-6/12">
+            <li class="p-2 mt-3 mb-3 bg-orange-400 rounded-md inline-flex items-center justify-center w-6/12"
+                @click="storeAuth.logOut">
                 SignOut
             </li>
         </ul>
@@ -37,8 +38,10 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useAuthStore } from '../stores/authStore';
 
 
-const dropDown = ref(false)
+const dropDown = ref(false);
+const storeAuth = useAuthStore();
 
 </script>

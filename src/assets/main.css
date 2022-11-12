@@ -3,6 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#app {
-  @apply font-body;
+body {
+  @apply font-body bg-gray-50;
 }

@@ -1,5 +1,8 @@
 <template>
-  <div>
-    <h1>hello</h1>
-  </div>
+  <RouterView />
 </template>
+
+<script setup>
+
+import { RouterView } from "vue-router"
+</script>

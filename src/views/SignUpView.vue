@@ -1,28 +1,31 @@
 <template>
-    <div class="flex justify-center items-center mt-2 mb-2">
-        <form @submit.prevent="" class="flex flex-col flex-nowrap justify-center items-center h-96">
+    <div class="flex justify-center items-center mt-10 mb-2">
+        <form @submit.prevent="authStore.signUp()" class="flex flex-col flex-nowrap justify-center items-center h-96">
             <h1 class="text-4xl font-bold">QuickBytes</h1>
-            <h2 class="text-gray-600 text-xl">SignUp</h2>
+            <h2 class="text-gray-600 text-xl">SignIn</h2>
             <p class="text-gray-800">Tasty treats quickly</p>
-            <input type="email" placeholder="random@gmail.com" class="inputs">
-            <input type="password" placeholder="************" class="inputs">
+            <label for="email" class="w-full text-left md:w-8/12 mt-3 text-gray-700">Email:</label>
+            <input type="email" placeholder="random@gmail.com"
+                class="w-full border-2 mt-1 p-3 rounded-2xl border-gray-400 md:w-8/12">
+            <label for="" class="w-full text-left md:w-8/12 mt-3 text-gray-700">Password:</label>
+            <input type="password" name="password" placeholder="************"
+                class="w-full border-2 mt-1 p-3 rounded-2xl border-gray-400 md:w-8/12">
             <span class="mt-2 mb-2">Already have an account? <RouterLink to="/signin" class="text-blue-700">Sign in
                 </RouterLink>
             </span>
-            <button type="submit" class="bg-orange-500 p-3 rounded-xl text-white">Sign Up</button>
+            <button type="submit" class="bg-orange-500 p-3 rounded-xl text-white font-medium w-4/12">Sign In</button>
         </form>
     </div>
 </template>
 
 <script setup>
+import { useAuthStore } from '../stores/authStore';
+
+const authStore = useAuthStore();
 
 </script>
 <style>
 form {
     width: 85%;
-}
-
-.inputs {
-    @apply w-10/12 border-2 mt-2 p-3 rounded-2xl border-gray-400
 }
 </style>

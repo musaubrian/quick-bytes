@@ -10,6 +10,9 @@ export const useAuthStore = defineStore("fireAuth", {
         signUpError: false
     }),
     actions: {
+        async signUp() {
+            console.log("signed up")
+        },
         async signIn() {
             console.log("sign in clicked")
             this.isLoggedIn = true

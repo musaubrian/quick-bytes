@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <button class="bg-blue-500" @click="authStuff.signIn()">Google</button>
-  </div>
+  <main>
+    <LoggedInNav />
+  </main>
 </template>
 <script setup>
+import LoggedInNav from '../components/LoggedInNav.vue';
+
 
 </script>

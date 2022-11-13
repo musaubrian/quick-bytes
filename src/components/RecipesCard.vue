@@ -1,20 +1,24 @@
 <template>
-    <div class="grid grid-cols-3 gap-2 w-auto mt-4 px-5 md:px-10">
-        <div class="col-span-3 md:col-span-1 border-2 rounded-md flex flex-col p-2 items-center justify-center capitalize my-1"
+    <div class="grid grid-cols-4 gap-2 w-auto mt-4 px-5 md:px-10">
+        <div class="col-span-4 md:col-span-2 border-2 rounded-md flex flex-col py-2 px-4 items-center justify-center capitalize my-1"
             v-for="recipe in recipeStore.recipes">
             <div class="inline-flex w-full justify-end">
                 <span class="border-2 border-orange-400 p-2 rounded-xl text-xs text-center">
                     {{ recipe.duration }}mins</span>
             </div>
             <h1 class="text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
-            <span class="text-gray-600">Ingredients:</span>
-            <p class="text-center">{{ recipe.ingredients }}</p>
-            <span class="inline-flex
-            ">Possible allergens:</span>
-            <p class="text-red-300"> {{ recipe.allergen }}</p>
+            <span class="text-gray-700 text-start w-full inline-flex items-center font-bold">Ingredients: <p
+                    class="text-start ml-2 w-full font-normal flex flex-row">
+                    {{
+                            recipe.ingredients
+                    }}</p></span>
 
-            <p>{{ recipe.tags }}</p>
-            <p class="text-center p-3">{{ recipe.process }}</p>
+            <span class="inline-flex font-semibold text-gray-700 w-full border-b-2 py-2">Possible allergens: <p
+                    class="text-orange-400 ml-1 font-normal"> {{
+                            recipe.allergen
+                    }}</p></span>
+
+            <p class="text-start w-full py-2">{{ recipe.process }}</p>
 
 
         </div>

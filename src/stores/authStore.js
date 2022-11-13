@@ -43,7 +43,7 @@ export const useAuthStore = defineStore("fireAuth", {
             router.push('/')
             if(error) {
                 this.signOutError = true
-            }
+            } this.isLoggedIn = false
         }
     }
 })

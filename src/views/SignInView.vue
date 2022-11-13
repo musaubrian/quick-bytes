@@ -19,7 +19,7 @@
     <div class="fixed top-0 left-0 h-10 mt-5 bg-green-30 p-5 flex flex-col w-full items-center justify-center"
         v-if="authStore.signInError === true">
         <h1 class="text-red-500 text-xl">Error Signing in</h1>
-        <p class="text-red-400 text-lg">Try again</p>
+        <p class="text-red-400 text-lg">Try Signing Up</p>
     </div>
 </template>
 

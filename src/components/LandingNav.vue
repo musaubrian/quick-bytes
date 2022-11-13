@@ -1,5 +1,5 @@
 <template>
-    <nav class="static bg-gray-200 inline-flex w-full justify-around  items-center p-4">
+    <nav class="static bg-gray-200 inline-flex w-full justify-between px-5 py-3 items-center">
         <div class="logo w-4/12">
             <h1 class="text-2xl font-bold text-end pl-2 md:text-center">QuickBytes</h1>
         </div>

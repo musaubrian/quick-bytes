@@ -7,7 +7,8 @@ export const useAuthStore = defineStore("fireAuth", {
         isLoggedIn: false,
         signUpError: false,
         signUpSuccess: false,
-        signInError: false
+        signInError: false,
+        signOutError: false
     }),
     actions: {
         async signUp(email, password) {
@@ -40,6 +41,9 @@ export const useAuthStore = defineStore("fireAuth", {
         async logOut(){
             const {error} = await supabase.auth.signOut()
             router.push('/')
+            if(error) {
+                this.signOutError = true
+            }
         }
     }
 })

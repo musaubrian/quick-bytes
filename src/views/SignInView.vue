@@ -5,10 +5,10 @@
             <h2 class="text-gray-600 text-xl">SignIn</h2>
             <p class="text-gray-800">Tasty treats quickly</p>
             <label for="email" class="w-full text-left md:w-8/12 mt-3 text-gray-700">Email:</label>
-            <input type="email" placeholder="random@gmail.com" v-model="email"
+            <input type="email" placeholder="random@gmail.com" v-model="email" required
                 class="w-full border-2 mt-1 p-3 rounded-xl border-gray-400 md:w-8/12">
             <label for="" class="w-full text-left md:w-8/12 mt-3 text-gray-700">Password:</label>
-            <input type="password" name="password" placeholder="supersecretpassword" v-model="password"
+            <input type="password" name="password" placeholder="supersecretpassword" v-model="password" required
                 class="w-full border-2 mt-1 p-3 rounded-xl border-gray-400 md:w-8/12">
             <span class="mt-2 mb-2">Don't have an account? <RouterLink to="/signup" class="text-blue-600">Sign up
                 </RouterLink>

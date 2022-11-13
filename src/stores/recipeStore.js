@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import router from "../router";
 import { supabase } from "../supabase";
 
 export const useRecipeStore = defineStore('recipes', {
@@ -6,7 +7,8 @@ export const useRecipeStore = defineStore('recipes', {
         recipes: '',
         fetchingRecipes: false,
         fetchError: false,
-        uploadError: false
+        uploadError: false,
+        uploading: false
     }),
     getters: {
         async getRecipes(){
@@ -14,12 +16,28 @@ export const useRecipeStore = defineStore('recipes', {
             const {data, error} = await supabase.from('qb-recipes').select()
 
             if(data){
-                this.recipes = data
-                console.log(this.recipes)
+                this.recipes = data                
             } else if(error){
                 this.fetchError = true
             }
             this.fetchingRecipes = false
+        }
+    },
+    actions: {
+        async addRecipes(recipeTitle, recipeIngredients, allergens, proceedure, preparationTime){
+            this.uploading = true
+            const {data, err} = await supabase.from('qb-recipes').insert({
+                title: recipeTitle,
+                ingredients: recipeIngredients,
+                allergen: allergens,
+                process: proceedure ,
+                duration: preparationTime
+            })
+            if(err){
+                this.uploadError = true
+            }
+            this.uploading = false
+            router.push('/home')
         }
     }
 

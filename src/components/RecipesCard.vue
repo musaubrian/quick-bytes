@@ -1,11 +1,21 @@
 <template>
-    <div class="grid grid-cols-3 gap-2 mt-4 px-4">
-        <div class="col-span-3 md:col-span-1 border-2 rounded-md flex flex-col p-2 items-center justify-center capitalize w-11/12"
+    <div class="grid grid-cols-3 gap-2 w-auto mt-4 px-5 md:px-10">
+        <div class="col-span-3 md:col-span-1 border-2 rounded-md flex flex-col p-2 items-center justify-center capitalize my-1"
             v-for="recipe in recipeStore.recipes">
-            <h1 class="text-gray-800 text-xl">{{ recipe.title }}</h1>
+            <div class="inline-flex w-full justify-end">
+                <span class="border-2 border-orange-400 p-2 rounded-xl text-xs text-center">
+                    {{ recipe.duration }}mins</span>
+            </div>
+            <h1 class="text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
             <span class="text-gray-600">Ingredients:</span>
             <p class="text-center">{{ recipe.ingredients }}</p>
-            <span class="relative">{{ recipe.duration }}mins</span>
+            <span class="inline-flex
+            ">Possible allergens:</span>
+            <p class="text-red-300"> {{ recipe.allergen }}</p>
+
+            <p>{{ recipe.tags }}</p>
+            <p class="text-center p-3">{{ recipe.process }}</p>
+
 
         </div>
     </div>

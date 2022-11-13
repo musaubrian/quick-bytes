@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h1>landing Page</h1>
+        <h1>Add more stuff</h1>
     </div>
 </template>

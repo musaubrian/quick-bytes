@@ -43,7 +43,6 @@ export default {
     methods: {
         uploadRecipes() {
             const recipeStore = useRecipeStore();
-            this.allergensObject = this.allergens
             recipeStore.addRecipes(this.recipeTitle, this.ingredients, this.allergens, this.proceedure, this.timeTaken)
         }
     },

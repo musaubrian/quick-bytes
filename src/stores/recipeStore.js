@@ -40,7 +40,7 @@ export const useRecipeStore = defineStore('recipes', {
             }
             this.uploading = false
             router.push('/home')
-        }
+        }        
     }
 
 })

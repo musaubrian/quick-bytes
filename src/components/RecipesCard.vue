@@ -7,18 +7,23 @@
                     {{ recipe.duration }}mins</span>
             </div>
             <h1 class="text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
-            <span class="text-gray-700 text-start w-full inline-flex items-center font-bold">Ingredients: <p
-                    class="text-start ml-2 w-full font-normal flex flex-row">
+            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Ingredients:
+                <p class="md:text-start md:ml-2 md:w-full md:font-normal md:inline-block hidden">
                     {{
                             recipe.ingredients
-                    }}</p></span>
+                    }}</p>
+            </span>
+            <p class="text-start ml-2 mb-2 w-full font-normal md:hidden">
+                {{
+                        recipe.ingredients
+                }}</p>
 
             <span class="inline-flex font-semibold text-gray-700 w-full border-b-2 py-2">Possible allergens: <p
                     class="text-orange-400 ml-1 font-normal"> {{
                             recipe.allergen
                     }}</p></span>
 
-            <p class="text-start w-full py-2">{{ recipe.process }}</p>
+            <p class="w-full py-2">{{ recipe.process }}</p>
 
 
         </div>

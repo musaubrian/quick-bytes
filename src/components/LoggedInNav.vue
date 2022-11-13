@@ -7,7 +7,7 @@
             <ul class="inline-flex cursor-pointer justify-end w-full">
                 <li
                     class="hidden  md:inline-flex md:p-2 md:mr-3 md:border-2 md:rounded-md md:border-orange-400 md:items-center">
-                    <RouterLink to="/add">Add Recipes</RouterLink>
+                    <RouterLink to="/add">Add Recipe</RouterLink>
                 </li>
                 <li class="hidden md:inline-flex md:p-2 md:bg-orange-400 md:rounded-md md:items-center">
                     <button>SignOut</button>
@@ -26,7 +26,7 @@
     <div class="bg-gray-200" v-if="dropDown">
         <ul class="flex flex-col items-center cursor-pointer">
             <li class="p-2 mt-3 border-2 rounded-md border-orange-400 inline-flex items-center justify-center w-6/12">
-                <RouterLink to="/add">Add recipes</RouterLink>
+                <RouterLink to="/add">Add recipe</RouterLink>
             </li>
             <li class="p-2 mt-3 mb-3 bg-orange-400 rounded-md inline-flex items-center justify-center w-6/12"
                 @click="storeAuth.logOut">

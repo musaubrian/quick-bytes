@@ -16,9 +16,10 @@
             <button type="submit" class="bg-orange-500 p-3 rounded-xl text-white font-medium w-4/12">Sign In</button>
         </form>
     </div>
-    <div class="fixed top-0 left-0 h-10 bg-green-30 p-5 inline-flex w-full items-center justify-center"
+    <div class="fixed top-0 left-0 h-10 mt-5 bg-green-30 p-5 flex flex-col w-full items-center justify-center"
         v-if="authStore.signInError === true">
-        <h1 class="text-red-500 p-5 text-xl">Error Signing in</h1>
+        <h1 class="text-red-500 text-xl">Error Signing in</h1>
+        <p class="text-red-400 text-lg">Try again</p>
     </div>
 </template>
 

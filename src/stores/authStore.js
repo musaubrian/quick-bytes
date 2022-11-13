@@ -4,7 +4,6 @@ import router from '../router'
 
 export const useAuthStore = defineStore("fireAuth", {
     state: () => ({
-        user: '',
         isLoggedIn: false,
         signUpError: false,
         signUpSuccess: false,
@@ -17,8 +16,7 @@ export const useAuthStore = defineStore("fireAuth", {
                 password: password
             })
             if (data){
-                this.user = data.user
-                console.log(this.user)
+                this.signUpSuccess = true
             }
             if(error){
                 this.signUpError = true
@@ -31,7 +29,11 @@ export const useAuthStore = defineStore("fireAuth", {
                 email: email,
                 password: password
             })
-            if (data){
+            if (error){
+                this.signInError = true
+                router.push('/signin')
+            } else if(data) {
+                this.isLoggedIn = true
                 router.push('/home')
             }
         },

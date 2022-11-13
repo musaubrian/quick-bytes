@@ -16,11 +16,11 @@
             <button type="submit" class="bg-orange-500 p-3 rounded-xl text-white font-medium w-4/12">Sign Up</button>
         </form>
     </div>
-    <div class="fixed top-0 left-0 h-auto mt-3 w-full flex justify-center items-center">
+    <div class="fixed top-0 left-0 h-auto mt-3 w-full flex justify-center items-center" v-if="authStore.signUpSuccess">
         <h1 class="text-green-400">Check your email</h1>
     </div>
     <div class="fixed top-1 left-0 h-auto mt-3 w-full flex justify-center items-center"
-        v-if="authStore.signInError === true">
+        v-if="authStore.signUpError === true">
         <h1 class="text-red-500">Error encountered when signing up</h1>
     </div>
 </template>
@@ -43,7 +43,9 @@ export default {
     },
     setup() {
         const authStore = useAuthStore()
-        console.log(authStore)
+        return {
+            authStore
+        }
     }
 }
 </script>

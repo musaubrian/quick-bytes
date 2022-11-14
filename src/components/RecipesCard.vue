@@ -1,6 +1,6 @@
 <template>
-    <div class="grid grid-cols-4 gap-2 w-auto mt-4 px-5 md:px-10">
-        <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col py-2 px-4 items-center justify-center capitalize my-1"
+    <div class="grid grid-cols-4 gap-4 w-auto mt-4 px-5 md:px-10">
+        <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col py-2 px-4 items-center justify-center capitalize shadow-md"
             v-for="recipe in recipeStore.recipes">
             <div class="inline-flex w-full justify-end">
                 <span class="border-2 border-orange-400 p-2 rounded-xl text-xs text-center">

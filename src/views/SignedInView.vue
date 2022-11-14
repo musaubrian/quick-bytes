@@ -1,10 +1,12 @@
 <template>
-  <main>
+  <main class="bg-gray-50">
     <LoggedInNav />
     <RecipesCard />
+    <FloatingButton />
   </main>
 </template>
 <script setup>
+import FloatingButton from '../components/FloatingButton.vue';
 import LoggedInNav from '../components/LoggedInNav.vue';
 import RecipesCard from '../components/RecipesCard.vue';
 </script>

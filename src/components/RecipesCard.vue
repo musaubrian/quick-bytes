@@ -24,7 +24,9 @@
             <span class="inline-flex font-semibold text-gray-700 w-full border-b-2 py-2">Possible allergens: <p
                     class="text-orange-400 ml-1 font-normal"> {{
                             recipe.allergen
-                    }}</p></span>
+                    }}</p>
+                <p class="text-orange-400 ml-1 font-normal" v-if="recipe.allergen.length < 1"> None specified</p>
+            </span>
 
             <p class="w-full py-2">{{ recipe.process }}</p>
 

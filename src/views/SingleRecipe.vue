@@ -15,15 +15,15 @@
         <span class="inline-flex font-semibold text-gray-700 w-full items-center border-b-2 py-2">
             <span class="w-5/12">Possible
                 Allergens:</span>
-            <p class="text-orange-400 ml-1 font-normal w-7/12" v-if="recipe.allergen.length > 1"> {{
+            <p class="text-orange-400 ml-1 font-normal w-7/12" v-if="recipe.allergen != ''"> {{
                     recipe.allergen
             }}</p>
-            <p class="text-orange-400 ml-1 font-normal" v-if="recipe.allergen.length < 1"> None specified</p>
+            <p class="text-orange-400 ml-1 font-normal" v-if="recipe.allergen === ''"> None specified</p>
         </span>
         <span>proceedure:</span>
         <p>{{ recipe.process }}</p>
     </div>
-    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/" class="text-blue-500 relative">Back home</RouterLink>
     <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchingRecipes === true">
         <h1 class="text-lg text-gray-600 font-bold">Fetching deliciousness...</h1>
     </div>

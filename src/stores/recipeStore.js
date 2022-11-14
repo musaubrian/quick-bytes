@@ -50,12 +50,14 @@ export const useRecipeStore = defineStore('recipes', {
             router.push('/')
         },
         async getSingleRecipe(id){
+            this.singleRecipe = ''
+            this.fetchingRecipes = true
             const {data, error} = await supabase.from('qb-recipes').select().eq('id', id)
             if(error){
                 this.fetchError = true
             } else if(data){
                 this.singleRecipe = data
-            }
+            } this.fetchingRecipes = false
         },
         routeToId(id){
             router.push('/' + id)

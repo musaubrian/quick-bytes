@@ -12,8 +12,12 @@
         <label for="duration" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Duration(minutes):</label>
         <input type="number" name="duration" class="w-10/12 border-2 md:w-6/12 p-2 rounded-md mb-2" v-model="timeTaken"
             required>
-        <textarea rows="5" class="border-2 border-gray-300 rounded-md mt-2 w-10/12 md:w-6/12 p-3" v-model="proceedure"
-            placeholder="peel the mangoes,\n Dice 'em real good" required></textarea>
+        <label for="process" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Short description:</label>
+        <textarea rows="3" class="border-2 border-gray-300 rounded-md mt-2 w-10/12 md:w-6/12 p-3" v-model="shortDesc"
+            required placeholder="keep it short and sweet"></textarea>
+        <label for="process" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Proceedure:</label>
+        <textarea rows="6" name="process" class="border-2 border-gray-300 rounded-md mt-2 w-10/12 md:w-6/12 p-3"
+            v-model="proceedure" placeholder="peel the mangoes,\n Dice 'em real good" required></textarea>
         <button type="submit"
             class="bg-orange-500 p-3 rounded-lg mt-2 active:bg-orange-600 hover:shadow-lg transition-all">
             <span v-if="recipeStore.uploading === false">Upload Recipe</span>
@@ -38,13 +42,14 @@ export default {
             ingredients: '',
             allergens: '',
             timeTaken: 10,
+            shortDesc: '',
             proceedure: ''
         }
     },
     methods: {
         uploadRecipes() {
             const recipeStore = useRecipeStore();
-            recipeStore.addRecipes(this.recipeTitle, this.ingredients, this.allergens, this.proceedure, this.timeTaken)
+            recipeStore.addRecipes(this.recipeTitle, this.ingredients, this.allergens, this.proceedure, this.timeTaken, this.shortDesc)
         }
     },
     setup() {

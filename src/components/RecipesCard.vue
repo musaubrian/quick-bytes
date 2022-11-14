@@ -30,7 +30,8 @@
                 <p class="text-orange-400 ml-1 font-normal" v-if="recipe.allergen.length < 1"> None specified</p>
             </span>
 
-            <p class="w-full py-2">{{ recipe.process }}</p>
+            <p class="w-full py-2">{{ recipe.shortDesc }}</p>
+            <span @click="recipeStore.routeToId(recipe.id)">Read more</span>
 
 
         </div>

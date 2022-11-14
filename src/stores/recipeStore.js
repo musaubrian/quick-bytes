@@ -39,7 +39,7 @@ export const useRecipeStore = defineStore('recipes', {
                 this.uploadError = true
             }
             this.uploading = false
-            router.push('/home')
+            router.push('/')
         }
     }
 })

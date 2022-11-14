@@ -4,9 +4,10 @@
             v-for="recipe in recipeStore.recipes">
             <div class="inline-flex w-full justify-end py-1">
                 <span
-                    class=" bg-blue-500 text-gray-100 p-1.5 rounded-full text-sm text-center inline-flex items-center justify-center">
-                    <span class="material-icons text-md">alarm</span>
-                    {{ recipe.duration }}mins</span>
+                    class=" bg-blue-500 text-gray-100 p-2 rounded-full text-xs text-center inline-flex items-center justify-center">
+                    <i class="material-icons text-sm text-center">alarm</i>
+                    {{ recipe.duration }}mins
+                </span>
             </div>
             <h1 class="text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
             <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Ingredients:

@@ -1,9 +1,11 @@
 <template>
-    <div class="grid grid-cols-4 gap-2 w-auto mt-4 px-5 md:px-10">
-        <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col py-2 px-4 items-center justify-center capitalize my-1"
+    <div class="grid grid-cols-4 gap-4 w-auto mt-4 px-5 md:px-10">
+        <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col py-2 px-4 items-center justify-center capitalize shadow-md"
             v-for="recipe in recipeStore.recipes">
-            <div class="inline-flex w-full justify-end">
-                <span class="border-2 border-orange-400 p-2 rounded-xl text-xs text-center">
+            <div class="inline-flex w-full justify-end py-1">
+                <span
+                    class=" bg-blue-500 text-gray-100 p-1.5 rounded-full text-sm text-center inline-flex items-center justify-center">
+                    <span class="material-icons text-md">alarm</span>
                     {{ recipe.duration }}mins</span>
             </div>
             <h1 class="text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>

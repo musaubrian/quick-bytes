@@ -28,7 +28,7 @@ export const useRecipeStore = defineStore('recipes', {
     actions: {
         async addRecipes(recipeTitle, recipeIngredients, allergens, proceedure, preparationTime){
             this.uploading = true
-            const {data, err} = await supabase.from('qb-recipes').insert({
+            const {err} = await supabase.from('qb-recipes').insert({
                 title: recipeTitle,
                 ingredients: recipeIngredients,
                 allergen: allergens,
@@ -40,7 +40,6 @@ export const useRecipeStore = defineStore('recipes', {
             }
             this.uploading = false
             router.push('/home')
-        }        
+        }
     }
-
 })

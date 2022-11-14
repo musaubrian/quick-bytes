@@ -1,6 +1,10 @@
 <template>
     <div v-for="recipe in recipeStore.singleRecipe">
-        <h1 class="text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
+        <img :src="recipe.imgLink" alt="recipe image" v-if="recipe.imgLink != null"
+            class="md:w-10/12 md:h-60 h-40 w-full object-cover object-center m-auto shadow-md">
+        <img src="../assets/notfound.png" alt="no image available" v-else="recipe.imgLink === null"
+            class="md:w-10/12 md:h-60 h-40 w-full object-cover object-center m-auto shadow-md">
+        <h1 class=" text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
         <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Ingredients:
             <p class="md:text-start md:ml-2 md:w-full md:font-normal md:inline-block hidden">
                 {{

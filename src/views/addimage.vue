@@ -19,7 +19,7 @@ let string = '';
 function onUpload() {
     const fileSelector = document.getElementById('file_input')
     let files = fileSelector.files[0];
-    let reader = new FileReader()
+    let reader = new FileReader();
     reader.onload = function () {
         string = reader.result.replace("data:", "")
             .replace(/^.+,/, "");

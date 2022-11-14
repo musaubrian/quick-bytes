@@ -1,5 +1,8 @@
 <template>
     <form @submit.prevent="uploadRecipes()" class="w-full h-full flex flex-col items-center justify-center">
+        <input type="file" accept="image/*" @change="onUpload(emptyString)"
+            class="block w-auto text-sm text-gray-900 bg-gray-200 rounded-lg border border-gray-300 cursor-pointer focus:outline-none"
+            id="file_input" required />
         <label for="recipe-title" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Recipe Title:</label>
         <input type="text" name="recipe-title" id="" class="w-10/12 border-2 md:w-6/12 p-2 rounded-md"
             placeholder="mango slushie" v-model="recipeTitle" required>
@@ -34,6 +37,8 @@
 
 <script>
 import { useRecipeStore } from '../stores/recipeStore';
+import { supabase } from '../supabase';
+import { decode } from 'base64-arraybuffer'
 
 export default {
     data() {
@@ -47,15 +52,42 @@ export default {
         }
     },
     methods: {
-        uploadRecipes() {
+        onUpload(string) {
+            const fileSelector = document.getElementById('file_input')
+            let files = fileSelector.files[0];
+            let reader = new FileReader();
+            reader.onload = function () {
+                const string = reader.result.replace("data:", "")
+                    .replace(/^.+,/, "");
+                console.log(string)
+            },
+                reader.readAsDataURL(files)
+        },
+        async uploadRecipes(string) {
             const recipeStore = useRecipeStore();
-            recipeStore.addRecipes(this.recipeTitle, this.ingredients, this.allergens, this.proceedure, this.timeTaken, this.shortDesc)
-        }
+            const fileSelector = document.getElementById('file_input')
+            let file = fileSelector.files[0];
+            const { data, error } = await supabase.storage.from('recipes')
+                .upload('images/' + file.name, decode(string), {
+                    upsert: true,
+                    contentType: 'image/*'
+                })
+            if (data) {
+                const baseUrl = import.meta.env.VITE_SUPABASE_URL + "/storage/v1/object/public/recipes/" + data.path
+                recipeStore.addRecipes(this.recipeTitle, this.ingredients, this.allergens, this.proceedure, this.timeTaken, this.shortDesc, baseUrl)
+            } else if (error) {
+                console.log(error)
+            }
+
+        },
+
     },
     setup() {
+        let emptyString = '';
         const recipeStore = useRecipeStore();
         return {
-            recipeStore
+            recipeStore,
+            emptyString
         }
 
     }

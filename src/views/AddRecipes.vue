@@ -14,7 +14,8 @@
             required>
         <textarea rows="5" class="border-2 border-gray-300 rounded-md mt-2 w-10/12 md:w-6/12 p-3" v-model="proceedure"
             placeholder="peel the mangoes,\n Dice 'em real good" required></textarea>
-        <button type="submit" class="bg-orange-500 p-3 rounded-lg mt-2">
+        <button type="submit"
+            class="bg-orange-500 p-3 rounded-lg mt-2 active:bg-orange-600 hover:shadow-lg transition-all">
             <span v-if="recipeStore.uploading === false">Upload Recipe</span>
             <span v-if="recipeStore.uploading == true">Uploading...</span>
         </button>

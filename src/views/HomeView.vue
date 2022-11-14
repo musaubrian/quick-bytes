@@ -1,6 +1,5 @@
 <template>
-  <div class="freebies">
-    <LandingNav />
+  <div>
     <HomePage />
   </div>
 </template>

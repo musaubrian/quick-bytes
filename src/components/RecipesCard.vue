@@ -38,7 +38,7 @@
         </div>
     </div>
     <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchingRecipes === true">
-        <h1 class="text-lg text-gray-600 font-bold">Fetching deliciousness...</h1>
+        <h1 class="text-lg text-gray-600 font-bold">Fetching your recipes...</h1>
     </div>
     <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchError === true">
         <h1 class="text-red-500 font-bold text-xl">Couldn't fetch recipes</h1>

@@ -19,8 +19,6 @@ export const useRecipeStore = defineStore('recipes', {
                 this.recipes = data                
             } else if(error){
                 this.fetchError = true
-            } else {
-                window.location.reload()
             }
             this.fetchingRecipes = false
         }

@@ -10,10 +10,10 @@
 
         <div class="inline-flex w-8/12 text-gray-100 md:w-6/12 justify-center  my-3 font-semibold">
             <RouterLink to="/signup"
-                class="p-4 text-xl mr-2 border-2 rounded-lg inline-flex justify-center items-center border-orange-400 active:bg-orange-400 transition-all">
+                class="p-2 text-lg mr-2 border-2 rounded-lg inline-flex justify-center items-center border-orange-400 active:bg-orange-400 transition-all">
                 SignUp</RouterLink>
             <RouterLink to="/signin"
-                class="p-4 text-xl ml-2 bg-orange-400 inline-flex justify-center items-center rounded-lg active:bg-orange-600 transition-all">
+                class="p-3 text-lg ml-2 bg-orange-400 inline-flex justify-center items-center rounded-lg active:bg-orange-600 transition-all">
                 LogIn</RouterLink>
         </div>
     </div>

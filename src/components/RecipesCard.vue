@@ -21,10 +21,12 @@
                         recipe.ingredients
                 }}</p>
 
-            <span class="inline-flex font-semibold text-gray-700 w-full border-b-2 py-2">Possible allergens: <p
-                    class="text-orange-400 ml-1 font-normal"> {{
-                            recipe.allergen
-                    }}</p>
+            <span class="inline-flex font-semibold text-gray-700 w-full border-b-2 py-2">
+                <span class="w-5/12">Possible
+                    Allergens:</span>
+                <p class="text-orange-400 ml-1 font-normal w-7/12" v-if="recipe.allergen.length > 1"> {{
+                        recipe.allergen
+                }}</p>
                 <p class="text-orange-400 ml-1 font-normal" v-if="recipe.allergen.length < 1"> None specified</p>
             </span>
 

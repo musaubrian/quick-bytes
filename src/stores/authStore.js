@@ -10,7 +10,6 @@ export const useAuthStore = defineStore("fireAuth", {
         signUpSuccess: false,
         signInError: false,
         signOutError: false,
-        user: useLocalStorage('user', '')
     }),
     actions: {
         async signUp(email, password) {
@@ -23,7 +22,6 @@ export const useAuthStore = defineStore("fireAuth", {
             }
             if(error){
                 this.signUpError = true
-                console.log(this.signUpError)
             }
             console.log(this.user)
         },
@@ -36,8 +34,6 @@ export const useAuthStore = defineStore("fireAuth", {
                 this.signInError = true
                 router.push('/signin')
             } else if(data) {
-                this.user = data
-                console.log(this.user) 
                 this.isLoggedIn = true
                 router.push('/')
             }

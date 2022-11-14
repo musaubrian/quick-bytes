@@ -23,7 +23,8 @@
         <span>proceedure:</span>
         <p>{{ recipe.process }}</p>
     </div>
-    <RouterLink to="/" class="text-blue-500 relative">Back home</RouterLink>
+    <RouterLink to="/" class="text-blue-500 relative" v-if="recipeStore.fetchingRecipes === false">Back home
+    </RouterLink>
     <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchingRecipes === true">
         <h1 class="text-lg text-gray-600 font-bold">Fetching deliciousness...</h1>
     </div>
@@ -31,11 +32,23 @@
         <h1 class="text-red-500 font-bold text-xl">Couldn't fetch recipes</h1>
         <p class="text-red-400 text-lg">Check your connection</p>
     </div>
+    <div class="w-full fixed bottom-1 mb-4 mt-2 right-0 md:hidden inline-flex items-end justify-end">
+        <span @click="forceReload($route.params.id)"
+            class="p-4 bg-orange-500 opacity-90 rounded-full cursor-pointer inline-flex items-center justify-center mr-4 active:bg-orange-600 transition duration-700 ease-in-out">
+            <i class="material-icons text-gray-200 text-center">sync</i>
+        </span>
+    </div>
 </template>
 <script>
 import { useRecipeStore } from '../stores/recipeStore';
 
 export default {
+    methods: {
+        forceReload(id) {
+            const recipeStore = useRecipeStore();
+            recipeStore.routeToId(id)
+        }
+    },
     setup() {
         const recipeStore = useRecipeStore();
         return {

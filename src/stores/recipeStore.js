@@ -22,15 +22,7 @@ export const useRecipeStore = defineStore('recipes', {
                 this.fetchError = true
             }
             this.fetchingRecipes = false
-        },
-        async fetchSingleRecipe(id){
-            const {data, error} = await supabase.from('qb-recipes').select().eq('id', id)
-            if(error){
-                this.fetchError = true
-            } else if(data){
-                this.singleRecipe = data
-            }
-        },
+        }
     },
     actions: {
         async addRecipes(recipeTitle, recipeIngredients, allergens, proceedure, preparationTime, desc){

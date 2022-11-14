@@ -31,7 +31,8 @@
             </span>
 
             <p class="w-full py-2">{{ recipe.shortDesc }}</p>
-            <span @click="recipeStore.routeToId(recipe.id)" class="text-blue-500 cursor-pointer">Show full
+            <span @click="recipeStore.routeToId(recipe.id)" class="text-gray-700 underline text-lg cursor-pointer">Show
+                full
                 recipe</span>
 
 

@@ -33,7 +33,8 @@ export const useRecipeStore = defineStore('recipes', {
                 allergen: allergens,
                 process: proceedure ,
                 duration: preparationTime,
-                shortDesc: desc
+                shortDesc: desc,
+                imgUrl: ''
             })
             if(err){
                 this.uploadError = true

@@ -1,6 +1,6 @@
 <template>
     <div v-for="recipe in recipeStore.singleRecipe">
-        <img :src="recipe.imgLink" alt="recipe image" v-if="recipe.imgLink != null"
+        <img :src="recipe.imgLink" alt="recipe image" v-if="recipe.imgLink != ''"
             class="md:w-10/12 md:h-60 h-40 w-full object-cover object-center m-auto shadow-md">
         <img src="../assets/notfound.png" alt="no image available" v-else="recipe.imgLink === null"
             class="md:w-10/12 md:h-60 h-40 w-full object-cover object-center m-auto shadow-md">

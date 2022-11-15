@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="uploadRecipes()" class="w-full h-full flex flex-col items-center justify-center">
         <input type="file" accept="image/*" @change="onUpload(string)"
-            class="block w-auto text-sm text-gray-900 bg-gray-200 rounded-lg border border-gray-300 cursor-pointer focus:outline-none mt-2"
+            class="w-auto text-sm text-gray-900 bg-gray-200 rounded-lg border border-gray-300 cursor-pointer focus:outline-none"
             id="file_input" required />
         <label for="recipe-title" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Recipe Title:</label>
         <input type="text" name="recipe-title" id="" class="w-10/12 border-2 md:w-6/12 p-2 rounded-md"
@@ -49,26 +49,36 @@ export default {
             allergens: '',
             timeTaken: 10,
             shortDesc: '',
-            proceedure: '',
-            imgLink: ''
+            proceedure: ''
         }
     },
     methods: {
         onUpload(string) {
+            const recipeStore = useRecipeStore();
             const fileSelector = document.getElementById('file_input')
             let files = fileSelector.files[0];
+            recipeStore.fileStuff = files;
             let reader = new FileReader();
             reader.onload = function () {
                 const string = reader.result.replace("data:", "")
                     .replace(/^.+,/, "");
-                console.log(string)
+                recipeStore.baseString = string
+                console.log(recipeStore.baseString)
+                recipeStore.uploadImage(recipeStore.baseString)
             }
             reader.readAsDataURL(files);
         },
         async uploadRecipes() {
             const recipeStore = useRecipeStore();
-            recipeStore.addRecipes(this.recipeTitle, this.ingredients, this.allergens, this.proceedure, this.timeTaken, this.shortDesc)
-        },
+            recipeStore.title = this.recipeTitle
+            recipeStore.ingredients = this.ingredients
+            recipeStore.allergens = this.allergens
+            recipeStore.duration = this.timeTaken
+            recipeStore.desc = this.shortDesc
+            recipeStore.process = this.proceedure
+            console.log([recipeStore.title, recipeStore.ingredients, recipeStore.allergens, recipeStore.duration, recipeStore.desc, recipeStore.process])
+            await recipeStore.addRecipes()
+        }
 
     },
     setup() {

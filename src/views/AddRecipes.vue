@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="uploadRecipes()" class="w-full h-full flex flex-col items-center justify-center">
-        <input type="file" accept="image/*" @change="onUpload(emptyString)"
-            class="block w-auto text-sm text-gray-900 bg-gray-200 rounded-lg border border-gray-300 cursor-pointer focus:outline-none"
+        <input type="file" accept="image/*" @change="onUpload(string)"
+            class="block w-auto text-sm text-gray-900 bg-gray-200 rounded-lg border border-gray-300 cursor-pointer focus:outline-none mt-2"
             id="file_input" required />
         <label for="recipe-title" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Recipe Title:</label>
         <input type="text" name="recipe-title" id="" class="w-10/12 border-2 md:w-6/12 p-2 rounded-md"
@@ -26,6 +26,7 @@
             <span v-if="recipeStore.uploading === false">Upload Recipe</span>
             <span v-if="recipeStore.uploading == true">Uploading...</span>
         </button>
+        <p>{{ string }}</p>
 
     </form>
     <div class="fixed top-0 left-0 mt-1 flex flex-col items-center justify-center w-full bg-gray-50 h-auto"
@@ -48,7 +49,8 @@ export default {
             allergens: '',
             timeTaken: 10,
             shortDesc: '',
-            proceedure: ''
+            proceedure: '',
+            imgLink: ''
         }
     },
     methods: {
@@ -60,34 +62,21 @@ export default {
                 const string = reader.result.replace("data:", "")
                     .replace(/^.+,/, "");
                 console.log(string)
-            },
-                reader.readAsDataURL(files)
-        },
-        async uploadRecipes(string) {
-            const recipeStore = useRecipeStore();
-            const fileSelector = document.getElementById('file_input')
-            let file = fileSelector.files[0];
-            const { data, error } = await supabase.storage.from('recipes')
-                .upload('images/' + file.name, decode(string), {
-                    upsert: true,
-                    contentType: 'image/*'
-                })
-            if (data) {
-                const baseUrl = import.meta.env.VITE_SUPABASE_URL + "/storage/v1/object/public/recipes/" + data.path
-                recipeStore.addRecipes(this.recipeTitle, this.ingredients, this.allergens, this.proceedure, this.timeTaken, this.shortDesc, baseUrl)
-            } else if (error) {
-                console.log(error)
             }
-
+            reader.readAsDataURL(files);
+        },
+        async uploadRecipes() {
+            const recipeStore = useRecipeStore();
+            recipeStore.addRecipes(this.recipeTitle, this.ingredients, this.allergens, this.proceedure, this.timeTaken, this.shortDesc)
         },
 
     },
     setup() {
-        let emptyString = '';
+        let string = '';
         const recipeStore = useRecipeStore();
         return {
             recipeStore,
-            emptyString
+            string
         }
 
     }

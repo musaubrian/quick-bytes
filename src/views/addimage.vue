@@ -1,9 +1,9 @@
 <template>
     <form @submit.prevent="handleUpload()">
-        <div className="flex min-h-screen flex-col items-center justify-center py-2">
+        <div className="flex flex-col items-center justify-center py-2">
 
             <input type="file" accept="image/*" @change="onUpload()"
-                class="block w-auto text-sm text-gray-900 bg-gray-200 rounded-lg border border-gray-300 cursor-pointer focus:outline-none"
+                class="w-auto text-sm text-gray-900 bg-gray-200 rounded-lg border border-gray-300 cursor-pointer focus:outline-none"
                 id="file_input" required />
             <button type="submit" class="bg-blue-500 mt-5 p-2 rounded-lg">add photo</button>
         </div>

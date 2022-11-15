@@ -1,5 +1,5 @@
 <template>
-    <div class="hero  w-full ">
+    <div class="hero  w-full bg-clip-text">
         <img src="../assets/noodles.jpg" alt="noodles" class="w-full h-full object-cover">
     </div>
     <div class="font-bold p-4 relative flex flex-col items-center justify-center landing">

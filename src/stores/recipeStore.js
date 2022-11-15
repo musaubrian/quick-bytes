@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import router from "../router";
 import { supabase } from "../supabase";
 
+
 export const useRecipeStore = defineStore('recipes', {
     state: ()=>({
         recipes: '',
@@ -9,7 +10,8 @@ export const useRecipeStore = defineStore('recipes', {
         fetchingRecipes: false,
         fetchError: false,
         uploadError: false,
-        uploading: false
+        uploading: false,
+        imgLink: ''
     }),
     getters: {
         async getRecipes(){
@@ -25,7 +27,7 @@ export const useRecipeStore = defineStore('recipes', {
         }
     },
     actions: {
-        async addRecipes(recipeTitle, recipeIngredients, allergens, proceedure, preparationTime, desc, imgUrl){
+        async addRecipes(recipeTitle, recipeIngredients, allergens, proceedure, preparationTime, desc, img){
             this.uploading = true
             const {err} = await supabase.from('qb-recipes').insert({
                 title: recipeTitle,
@@ -34,7 +36,7 @@ export const useRecipeStore = defineStore('recipes', {
                 process: proceedure ,
                 duration: preparationTime,
                 shortDesc: desc,
-                link: imgUrl 
+                link: img
             })
             if(err){
                 this.uploadError = true

@@ -1,8 +1,10 @@
 <template>
-    <div class="grid grid-cols-4 gap-4 w-auto mt-4 px-5 md:px-10">
-        <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col py-2 px-4 items-center justify-center capitalize shadow-md"
+    <div class="grid grid-cols-4 gap-4 w-auto mt-4 px-5 md:px-10 mb-20">
+        <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col px-4 py-2 items-center justify-around capitalize shadow-md"
             v-for="recipe in recipeStore.recipes" :key="recipe.id">
-            <div class="inline-flex w-full justify-end py-1">
+            <div class="inline-flex w-full justify-end py-2">
+                <img :src="recipe.imgLink" alt="recipe image"
+                    class="w-full h-11 rounded-full pr-1 object-cover object-center">
                 <span
                     class=" bg-blue-500 text-gray-100 p-2 rounded-full text-xs text-center inline-flex items-center justify-center">
                     <i class="material-icons text-sm text-center">alarm</i>
@@ -13,32 +15,33 @@
             <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Ingredients:
                 <p class="md:text-start md:ml-2 md:w-full md:font-normal md:inline-block hidden">
                     {{
-                            recipe.ingredients
+                    recipe.ingredients
                     }}</p>
             </span>
             <p class="text-start ml-2 mb-2 w-full font-normal md:hidden">
                 {{
-                        recipe.ingredients
+                recipe.ingredients
                 }}</p>
 
             <span class="inline-flex font-semibold text-gray-700 w-full items-center border-b-2 py-2">
                 <span class="w-5/12">Possible
                     Allergens:</span>
                 <p class="text-orange-400 ml-1 font-normal w-7/12" v-if="recipe.allergen != ''"> {{
-                        recipe.allergen
+                recipe.allergen
                 }}</p>
                 <p class="text-orange-400 ml-1 font-normal" v-if="recipe.allergen === ''"> None specified</p>
             </span>
 
             <p class="w-full py-2">{{ recipe.shortDesc }}</p>
-            <span @click="recipeStore.routeToId(recipe.id)" class="text-blue-500 cursor-pointer">Show full
+            <span @click="recipeStore.routeToId(recipe.id)" class="text-gray-700 underline my-3 cursor-pointer">Show
+                full
                 recipe</span>
 
 
         </div>
     </div>
     <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchingRecipes === true">
-        <h1 class="text-lg text-gray-600 font-bold">Fetching deliciousness...</h1>
+        <h1 class="text-lg text-gray-600 font-bold">Fetching your recipes...</h1>
     </div>
     <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchError === true">
         <h1 class="text-red-500 font-bold text-xl">Couldn't fetch recipes</h1>
@@ -51,4 +54,6 @@ import { useRecipeStore } from '../stores/recipeStore'
 const recipeStore = useRecipeStore();
 recipeStore.getRecipes
 
+
 </script>
+

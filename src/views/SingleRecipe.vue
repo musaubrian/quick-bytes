@@ -1,6 +1,10 @@
 <template>
     <div v-for="recipe in recipeStore.singleRecipe">
-        <h1 class="text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
+        <img :src="recipe.imgLink" alt="recipe image" v-if="recipe.imgLink != ''"
+            class="md:10/12 md:h-60 h-40 w-full object-cover object-center m-auto shadow-md">
+        <img src="../assets/notfound.png" alt="no image available" v-else="recipe.imgLink === null"
+            class="md:w-10/12 md:h-60 h-40 w-full object-cover object-center m-auto shadow-md">
+        <h1 class=" text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
         <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Ingredients:
             <p class="md:text-start md:ml-2 md:w-full md:font-normal md:inline-block hidden">
                 {{
@@ -26,13 +30,13 @@
     <RouterLink to="/" class="text-blue-500 relative" v-if="recipeStore.fetchingRecipes === false">Back home
     </RouterLink>
     <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchingRecipes === true">
-        <h1 class="text-lg text-gray-600 font-bold">Fetching deliciousness...</h1>
+        <h1 class="text-lg text-gray-600 font-bold">Fetching your recipes...</h1>
     </div>
     <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchError === true">
         <h1 class="text-red-500 font-bold text-xl">Couldn't fetch recipes</h1>
         <p class="text-red-400 text-lg">Check your connection</p>
     </div>
-    <div class="w-full fixed bottom-1 mb-4 mt-2 right-0 md:hidden inline-flex items-end justify-end">
+    <div class="w-full fixed bottom-1 mb-4 mt-2 right-0 mr-1 md:hidden inline-flex items-end justify-end">
         <span @click="forceReload($route.params.id)"
             class="p-4 bg-orange-500 opacity-90 rounded-full cursor-pointer inline-flex items-center justify-center mr-4 active:bg-orange-600 transition duration-700 ease-in-out">
             <i class="material-icons text-gray-200 text-center">sync</i>

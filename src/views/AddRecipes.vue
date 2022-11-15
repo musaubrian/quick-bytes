@@ -1,5 +1,8 @@
 <template>
     <form @submit.prevent="uploadRecipes()" class="w-full h-full flex flex-col items-center justify-center">
+        <input type="file" accept="image/*" @change="onUpload(string)"
+            class="w-auto text-sm text-gray-900 bg-gray-200 rounded-lg border border-gray-300 cursor-pointer focus:outline-none"
+            id="file_input" required />
         <label for="recipe-title" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Recipe Title:</label>
         <input type="text" name="recipe-title" id="" class="w-10/12 border-2 md:w-6/12 p-2 rounded-md"
             placeholder="mango slushie" v-model="recipeTitle" required>
@@ -23,6 +26,7 @@
             <span v-if="recipeStore.uploading === false">Upload Recipe</span>
             <span v-if="recipeStore.uploading == true">Uploading...</span>
         </button>
+        <p>{{ string }}</p>
 
     </form>
     <div class="fixed top-0 left-0 mt-1 flex flex-col items-center justify-center w-full bg-gray-50 h-auto"
@@ -34,6 +38,8 @@
 
 <script>
 import { useRecipeStore } from '../stores/recipeStore';
+import { supabase } from '../supabase';
+import { decode } from 'base64-arraybuffer'
 
 export default {
     data() {
@@ -47,15 +53,40 @@ export default {
         }
     },
     methods: {
-        uploadRecipes() {
+        onUpload(string) {
             const recipeStore = useRecipeStore();
-            recipeStore.addRecipes(this.recipeTitle, this.ingredients, this.allergens, this.proceedure, this.timeTaken, this.shortDesc)
+            const fileSelector = document.getElementById('file_input')
+            let files = fileSelector.files[0];
+            recipeStore.fileStuff = files;
+            let reader = new FileReader();
+            reader.onload = function () {
+                const string = reader.result.replace("data:", "")
+                    .replace(/^.+,/, "");
+                recipeStore.baseString = string
+                console.log(recipeStore.baseString)
+                recipeStore.uploadImage(recipeStore.baseString)
+            }
+            reader.readAsDataURL(files);
+        },
+        async uploadRecipes() {
+            const recipeStore = useRecipeStore();
+            recipeStore.title = this.recipeTitle
+            recipeStore.ingredients = this.ingredients
+            recipeStore.allergens = this.allergens
+            recipeStore.duration = this.timeTaken
+            recipeStore.desc = this.shortDesc
+            recipeStore.process = this.proceedure
+            console.log([recipeStore.title, recipeStore.ingredients, recipeStore.allergens, recipeStore.duration, recipeStore.desc, recipeStore.process])
+            await recipeStore.addRecipes()
         }
+
     },
     setup() {
+        let string = '';
         const recipeStore = useRecipeStore();
         return {
-            recipeStore
+            recipeStore,
+            string
         }
 
     }

@@ -37,6 +37,11 @@ const router = createRouter({
       path: '/:id',
       name: 'recipe',
       component: ()=> import('../views/SingleRecipe.vue')
+    },
+    {
+      path: '/image',
+      name: 'images',
+      component: () => import('../views/addimage.vue')
     }
   ]
 })

@@ -1,9 +1,10 @@
 <template>
-    <div class="grid grid-cols-4 gap-4 w-auto mt-4 px-5 md:px-10">
-        <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col py-2 px-4 items-center justify-center capitalize shadow-md"
+    <div class="grid grid-cols-4 gap-4 w-auto mt-4 px-5 md:px-10 mb-20">
+        <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col px-4 items-center justify-center capitalize shadow-md"
             v-for="recipe in recipeStore.recipes" :key="recipe.id">
             <div class="inline-flex w-full justify-end py-1">
-                <img :src="recipe.imgLink" alt="recipe image" class="w-full h-11 rounded-full pr-1 object-cover">
+                <img :src="recipe.imgLink" alt="recipe image"
+                    class="w-full h-11 rounded-full pr-1 object-cover object-center">
                 <span
                     class=" bg-blue-500 text-gray-100 p-2 rounded-full text-xs text-center inline-flex items-center justify-center">
                     <i class="material-icons text-sm text-center">alarm</i>

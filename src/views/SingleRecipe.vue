@@ -36,7 +36,7 @@
         <h1 class="text-red-500 font-bold text-xl">Couldn't fetch recipes</h1>
         <p class="text-red-400 text-lg">Check your connection</p>
     </div>
-    <div class="w-full fixed bottom-1 mb-4 mt-2 right-0 md:hidden inline-flex items-end justify-end">
+    <div class="w-full fixed bottom-1 mb-4 mt-2 right-0 mr-1 md:hidden inline-flex items-end justify-end">
         <span @click="forceReload($route.params.id)"
             class="p-4 bg-orange-500 opacity-90 rounded-full cursor-pointer inline-flex items-center justify-center mr-4 active:bg-orange-600 transition duration-700 ease-in-out">
             <i class="material-icons text-gray-200 text-center">sync</i>

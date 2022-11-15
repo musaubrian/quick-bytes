@@ -1,8 +1,8 @@
 <template>
     <div class="grid grid-cols-4 gap-4 w-auto mt-4 px-5 md:px-10 mb-20">
-        <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col px-4 items-center justify-center capitalize shadow-md"
+        <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col px-4 py-2 items-center justify-around capitalize shadow-md"
             v-for="recipe in recipeStore.recipes" :key="recipe.id">
-            <div class="inline-flex w-full justify-end py-1">
+            <div class="inline-flex w-full justify-end py-2">
                 <img :src="recipe.imgLink" alt="recipe image"
                     class="w-full h-11 rounded-full pr-1 object-cover object-center">
                 <span
@@ -15,19 +15,19 @@
             <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Ingredients:
                 <p class="md:text-start md:ml-2 md:w-full md:font-normal md:inline-block hidden">
                     {{
-                            recipe.ingredients
+                    recipe.ingredients
                     }}</p>
             </span>
             <p class="text-start ml-2 mb-2 w-full font-normal md:hidden">
                 {{
-                        recipe.ingredients
+                recipe.ingredients
                 }}</p>
 
             <span class="inline-flex font-semibold text-gray-700 w-full items-center border-b-2 py-2">
                 <span class="w-5/12">Possible
                     Allergens:</span>
                 <p class="text-orange-400 ml-1 font-normal w-7/12" v-if="recipe.allergen != ''"> {{
-                        recipe.allergen
+                recipe.allergen
                 }}</p>
                 <p class="text-orange-400 ml-1 font-normal" v-if="recipe.allergen === ''"> None specified</p>
             </span>

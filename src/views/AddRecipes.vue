@@ -19,7 +19,7 @@
             required>
         <label for="process" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Short description:</label>
         <textarea rows="3" class="border-2 border-gray-300 rounded-lg mt-2 w-10/12 md:w-6/12 p-3" v-model="shortDesc"
-            required placeholder="keep it short and sweet"></textarea>
+            required placeholder="keep it short"></textarea>
         <label for="process" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Proceedure:</label>
         <textarea rows="6" name="process" class="border-2 border-gray-300 rounded-lg mt-2 w-10/12 md:w-6/12 p-3"
             v-model="proceedure" placeholder="peel the mangoes...
@@ -41,8 +41,6 @@
 
 <script>
 import { useRecipeStore } from '../stores/recipeStore';
-import { supabase } from '../supabase';
-import { decode } from 'base64-arraybuffer'
 
 export default {
     data() {
@@ -66,7 +64,7 @@ export default {
                 const string = reader.result.replace("data:", "")
                     .replace(/^.+,/, "");
                 recipeStore.baseString = string
-                console.log(recipeStore.baseString)
+                // console.log(recipeStore.baseString)
                 recipeStore.uploadImage(recipeStore.baseString)
             }
             reader.readAsDataURL(files);
@@ -79,7 +77,7 @@ export default {
             recipeStore.duration = this.timeTaken
             recipeStore.desc = this.shortDesc
             recipeStore.process = this.proceedure
-            console.log([recipeStore.title, recipeStore.ingredients, recipeStore.allergens, recipeStore.duration, recipeStore.desc, recipeStore.process])
+            // console.log([recipeStore.title, recipeStore.ingredients, recipeStore.allergens, recipeStore.duration, recipeStore.desc, recipeStore.process])
             await recipeStore.addRecipes()
         }
 

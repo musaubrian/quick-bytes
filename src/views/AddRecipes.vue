@@ -64,7 +64,6 @@ export default {
                 const string = reader.result.replace("data:", "")
                     .replace(/^.+,/, "");
                 recipeStore.baseString = string
-                // console.log(recipeStore.baseString)
                 recipeStore.uploadImage(recipeStore.baseString)
             }
             reader.readAsDataURL(files);
@@ -77,7 +76,6 @@ export default {
             recipeStore.duration = this.timeTaken
             recipeStore.desc = this.shortDesc
             recipeStore.process = this.proceedure
-            // console.log([recipeStore.title, recipeStore.ingredients, recipeStore.allergens, recipeStore.duration, recipeStore.desc, recipeStore.process])
             await recipeStore.addRecipes()
         }
 

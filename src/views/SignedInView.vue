@@ -14,7 +14,7 @@ import { useAuthStore } from '../stores/authStore';
 
 const authStore = useAuthStore();
 
-if (authStore.user < 1 || authStore.isLoggedIn === false) {
+if (authStore.isLoggedIn === false) {
   router.push('/home')
 }
 </script>

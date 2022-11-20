@@ -79,7 +79,7 @@ export const useRecipeStore = defineStore('recipes', {
             } this.fetchingRecipes = false
         },
         routeToId(id){
-            router.push('/' + id)
+            router.push('/recipes/' + id)
             this.getSingleRecipe(id)
         }
     }

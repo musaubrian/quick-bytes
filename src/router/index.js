@@ -31,7 +31,7 @@ const router = createRouter({
       component: () => import('../views/AddRecipes.vue')
     },
     {
-      path: '/:id',
+      path: '/recipes/:id',
       name: 'recipe',
       component: ()=> import('../views/SingleRecipe.vue')
     },
@@ -39,6 +39,11 @@ const router = createRouter({
       path: '/search',
       name: 'search',
       component: ()=> import('../views/SearchView.vue')
+    },
+    {
+      path: '/recipes',
+      name: 'recipes',
+      component: ()=> import('../views/SearchResults.vue')
     }
   ]
 })

@@ -1,31 +1,43 @@
 <template>
-    <form @submit.prevent="" class="w-full flex flex-col  justify-center items-center">
+    <div class="hero  w-full bg-clip-text">
+        <img src="../assets/steak.jpg" alt="noodles" class="w-full h-full object-cover">
+    </div>
+    <form @submit.prevent="search()" class="w-full flex flex-col  justify-center items-center relative">
         <input type="search" id="search"
-            class="border-2 border-blue-500 p-2 rounded-lg w-10/12 md:w-5/12 focus:ring-5 focus:ring-blue-500 focus:outline-none f"
-            placeholder="Let's find your meal" />
+            class="p-3 rounded-lg w-10/12 md:w-5/12 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg transition-all bg-gray-50"
+            placeholder="Let's find your meal" v-model="searchString" />
         <button type="submit"
-            class="inline-flex items-center justify-center bg-blue-400 p-3 rounded-lg mt-1 capitalize text-gray-100 md:w-1/6">search</button>
+            class="inline-flex items-center justify-center bg-blue-400 p-3 rounded-lg mt-2 capitalize text-gray-100 md:w-1/6 active:bg-blue-600 font-semibold transition-all">search</button>
     </form>
 </template>
 
 <script>
 import { useSearchStore } from '../stores/searchStore'
+import { useAuthStore } from '../stores/authStore';
+import router from '../router';
 export default {
     data() {
         return {
-            search: ''
+            searchString: ''
         }
     },
     methods: {
-        getFocus() {
-            const searchStore = useSearchStore;
-            searchStore.focusInput
+        search() {
+            const searchStore = useSearchStore();
+            searchStore.searchWord = this.searchString
+            router.push('/recipes')
         }
+
     },
     setup() {
-        const searchStore = useSearchStore;
+        const searchStore = useSearchStore();
+        const authStore = useAuthStore();
+        if (authStore.isLoggedIn === false) {
+            router.push('/home')
+        }
 
         return {
+            authStore,
             searchStore
         }
 
@@ -36,5 +48,9 @@ export default {
 <style>
 form {
     height: 100vh;
+}
+
+.hero {
+    filter: brightness(0.7);
 }
 </style>

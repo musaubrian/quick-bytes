@@ -1,6 +1,6 @@
 <template>
     <div class="hero  w-full bg-clip-text">
-        <img src="../assets/steak.jpg" alt="noodles" class="w-full h-full object-center">
+        <img src="../assets/steak.jpg" alt="noodles" class="w-full h-full object-cover">
     </div>
     <form @submit.prevent="search()" class="w-full flex flex-col  justify-center items-center relative">
         <input type="search" id="search" required

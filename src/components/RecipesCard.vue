@@ -17,22 +17,24 @@
             <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Ingredients:
                 <p class="md:text-start md:ml-2 md:w-full md:font-normal md:inline-block hidden">
                     {{
-                    recipe.ingredients
+                            recipe.ingredients
                     }}</p>
             </span>
             <p class="text-start ml-2 mb-2 w-full font-normal md:hidden">
                 {{
-                recipe.ingredients
+                        recipe.ingredients
                 }}</p>
 
-            <span class="inline-flex font-semibold text-gray-700 w-full items-center border-b-2 py-2">
-                <span class="w-5/12">Possible
-                    Allergens:</span>
-                <p class="text-orange-400 ml-1 font-normal w-7/12" v-if="recipe.allergen != ''"> {{
-                recipe.allergen
-                }}</p>
-                <p class="text-orange-400 ml-1 font-normal" v-if="recipe.allergen === ''"> None specified</p>
+            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Possible allergens:
+                <p class="md:text-start md:ml-2 md:w-full md:font-normal md:inline-block hidden text-orange-400">
+                    {{
+                            recipe.ingredients
+                    }}</p>
             </span>
+            <p class="text-start ml-2 mb-2 w-full font-normal md:hidden text-orange-400">
+                {{
+                        recipe.ingredients
+                }}</p>
 
             <p class="w-full py-2">{{ recipe.shortDesc }}</p>
             <span @click="recipeStore.routeToId(recipe.id)" class="text-gray-700 underline my-3 cursor-pointer">Show

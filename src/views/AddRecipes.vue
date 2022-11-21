@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="uploadRecipes()" class="w-full h-full flex flex-col items-center justify-center">
+    <form @submit.prevent="uploadRecipes()" class="w-full h-full mb-4 flex flex-col items-center justify-center">
         <label for="recipe-title" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Recipe Image:</label>
         <input type="file" accept="image/*" @change="onUpload(string)"
             class="block w-10/12 md:w-6/12 text-sm mt-1 text-gray-800 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-200 focus:outline-none dark:bg-gray-700 dark:border-gray-700 dark:placeholder-gray-100"
@@ -17,15 +17,12 @@
         <label for="duration" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Duration(minutes):</label>
         <input type="number" name="duration" class="w-10/12 border-2 md:w-6/12 p-2 rounded-lg mb-2" v-model="timeTaken"
             required>
-        <label for="process" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Short description:</label>
-        <textarea rows="3" class="border-2 border-gray-300 rounded-lg mt-2 w-10/12 md:w-6/12 p-3" v-model="shortDesc"
-            required placeholder="keep it short"></textarea>
         <label for="process" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Proceedure:</label>
         <textarea rows="6" name="process" class="border-2 border-gray-300 rounded-lg mt-2 w-10/12 md:w-6/12 p-3"
             v-model="proceedure" placeholder="peel the mangoes...
 (be as detailed as possible)" required></textarea>
         <button type="submit"
-            class="bg-orange-500 p-3 rounded-lg mt-2 active:bg-orange-600 hover:shadow-lg transition-all">
+            class="bg-orange-500 p-3 rounded-lg mt-3 active:bg-orange-600 hover:shadow-lg transition-all">
             <span v-if="recipeStore.uploading === false">Upload Recipe</span>
             <span v-if="recipeStore.uploading == true">Uploading...</span>
         </button>
@@ -47,9 +44,8 @@ export default {
         return {
             recipeTitle: '',
             ingredients: '',
-            allergens: '',
+            allergens: 'none',
             timeTaken: 10,
-            shortDesc: '',
             proceedure: ''
         }
     },
@@ -74,7 +70,6 @@ export default {
             recipeStore.ingredients = this.ingredients
             recipeStore.allergens = this.allergens
             recipeStore.duration = this.timeTaken
-            recipeStore.desc = this.shortDesc
             recipeStore.process = this.proceedure
             await recipeStore.addRecipes()
         }

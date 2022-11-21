@@ -14,30 +14,19 @@
                 </span>
             </div>
             <h1 class="text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
-            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Ingredients:
-                <p class="md:text-start md:ml-2 md:w-full md:font-normal md:inline-block hidden">
-                    {{
-                            recipe.ingredients
-                    }}</p>
-            </span>
-            <p class="text-start ml-2 mb-2 w-full font-normal md:hidden">
+            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center text-lg">Ingredients:</span>
+            <p class="text-start ml-2 mb-2 w-full font-normal text-gray-700">
                 {{
                         recipe.ingredients
                 }}</p>
 
-            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Possible allergens:
-                <p class="md:text-start md:ml-2 md:w-full md:font-normal md:inline-block hidden text-orange-400">
-                    {{
-                            recipe.ingredients
-                    }}</p>
+            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center text-lg">Possible allergens:
             </span>
-            <p class="text-start ml-2 mb-2 w-full font-normal md:hidden text-orange-400">
+            <p class="text-start ml-2 mb-2 w-full font-normal  text-orange-500">
                 {{
-                        recipe.ingredients
+                        recipe.allergen
                 }}</p>
-
-            <p class="w-full py-2">{{ recipe.shortDesc }}</p>
-            <span @click="recipeStore.routeToId(recipe.id)" class="text-gray-700 underline my-3 cursor-pointer">Show
+            <span @click="recipeStore.routeToId(recipe.id)" class="text-gray-700 underline my-2 cursor-pointer">Show
                 full
                 recipe</span>
         </div>

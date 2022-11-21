@@ -7,7 +7,8 @@ export const useSearchStore = defineStore('search', {
         searchWord: useLocalStorage('searchWord', ''),
         data: '',
         searchResults: '',
-        singleSearchResult: ''
+        singleSearchResult: '',
+        fetching: false,
     }),
     getters: {
         getRecipe(responseArray){
@@ -24,11 +25,12 @@ export const useSearchStore = defineStore('search', {
                     .then((response) => response.json())
                     .then(result => (this.searchResults = result.meals));
                 console.log(url)
-                console.log('results:',this.searchResults)
+                console.log('results:',this.searchResults);
         }
     },
     actions: {
         async fetchSingleRecipe(id){
+            this.fetching = true
             var url = `https://themealdb.com/api/json/v1/1/lookup.php?i=${id}`
             var options = {
                 method: 'GET',
@@ -37,7 +39,8 @@ export const useSearchStore = defineStore('search', {
             console.log(url)
             await fetch(url, options)
             .then((response)=> (response.json()))
-            .then(result => (this.singleSearchResult = result.meals))
+            .then(result => (this.singleSearchResult = result.meals));
+            this.fetching = false
         },
         routeToSearchedId(id){
             router.replace('/search/recipes/'+id)

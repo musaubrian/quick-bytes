@@ -64,6 +64,9 @@
             </div>
         </div>
     </div>
+    <div class="flex flex-col justify-center items-center mt-3" v-if="searchStore.fetching === true">
+        <h1 class="text-lg text-gray-600 font-bold">Getting your recipes...</h1>
+    </div>
 </template>
 
 <script setup>

@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 export const useSearchStore = defineStore('search', {
     state: ()=>({
-        searchWord: 'fish',
+        searchWord: 'meatloaf',
         data: '',
         searchResults: ''
     }),
@@ -11,20 +11,17 @@ export const useSearchStore = defineStore('search', {
             this.searchResults = responseArray
             console.log(this.searchResults)
         },
-        searchForRecipe(){
+        async searchForRecipe(){
             var url = `https://themealdb.com/api/json/v1/1/search.php?s=${this.searchWord}`
             var requestOptions = {
                 method: 'GET',
                 redirect: 'follow'
               };
-              if (this.searchWord === '') {
-                alert('empty search word')
-              } else {              
-                fetch(url, requestOptions)
+              await fetch(url, requestOptions)
                     .then((response) => response.json())
-                    .then(result => console.log(result.meals));
+                    .then(result => (this.searchResults = result.meals));
                 console.log(url)
-              }
+                console.log('results:',this.searchResults)
         }
     }
 })

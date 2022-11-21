@@ -1,5 +1,7 @@
 # quick-bytes
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/929b8d52-3a42-4201-aada-f06368afb603/deploy-status)](https://app.netlify.com/sites/quickbyts/deploys)
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup

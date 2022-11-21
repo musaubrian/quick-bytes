@@ -16,6 +16,9 @@
                 class="text-gray-700 underline my-3 cursor-pointer">Show full recipe</span>
         </div>
     </div>
+    <div v-if="searchStore.searchResults === null" class="text-gray-600 text-xl font-semibold text-center">
+        <h1>Nothing found on <span class="font-black text-gray-900">'{{ searchStore.searchWord }}'</span></h1>
+    </div>
     <FloatingButton />
     <FetchingRecipes />
 </template>

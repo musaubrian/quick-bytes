@@ -11,7 +11,6 @@ export const useRecipeStore = defineStore('recipes', {
         ingredients: '',
         allergens: '',
         duration: 1,
-        desc: '',
         process: '',
         singleRecipe: '',
         fetchingRecipes: false,
@@ -59,7 +58,6 @@ export const useRecipeStore = defineStore('recipes', {
                 allergen: this.allergens,
                 process: this.process ,
                 duration: this.duration,
-                shortDesc: this.desc,
                 imgLink: this.imglink
             })
             if(err){
@@ -79,7 +77,7 @@ export const useRecipeStore = defineStore('recipes', {
             } this.fetchingRecipes = false
         },
         routeToId(id){
-            router.push('/' + id)
+            router.push('/recipe/' + id)
             this.getSingleRecipe(id)
         }
     }

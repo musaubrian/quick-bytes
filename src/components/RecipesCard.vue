@@ -14,45 +14,31 @@
                 </span>
             </div>
             <h1 class="text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
-            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center">Ingredients:
-                <p class="md:text-start md:ml-2 md:w-full md:font-normal md:inline-block hidden">
-                    {{
-                    recipe.ingredients
-                    }}</p>
-            </span>
-            <p class="text-start ml-2 mb-2 w-full font-normal md:hidden">
+            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center text-lg">Ingredients:</span>
+            <p class="text-start ml-2 mb-2 w-full font-normal text-gray-700">
                 {{
-                recipe.ingredients
+                        recipe.ingredients
                 }}</p>
 
-            <span class="inline-flex font-semibold text-gray-700 w-full items-center border-b-2 py-2">
-                <span class="w-5/12">Possible
-                    Allergens:</span>
-                <p class="text-orange-400 ml-1 font-normal w-7/12" v-if="recipe.allergen != ''"> {{
-                recipe.allergen
-                }}</p>
-                <p class="text-orange-400 ml-1 font-normal" v-if="recipe.allergen === ''"> None specified</p>
+            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center text-lg">Possible allergens:
             </span>
-
-            <p class="w-full py-2">{{ recipe.shortDesc }}</p>
-            <span @click="recipeStore.routeToId(recipe.id)" class="text-gray-700 underline my-3 cursor-pointer">Show
+            <p class="text-start ml-2 mb-2 w-full font-normal  text-orange-500">
+                {{
+                        recipe.allergen
+                }}</p>
+            <span @click="recipeStore.routeToId(recipe.id)" class="text-gray-700 underline my-2 cursor-pointer">Show
                 full
                 recipe</span>
-
-
         </div>
     </div>
-    <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchingRecipes === true">
-        <h1 class="text-lg text-gray-600 font-bold">Fetching your recipes...</h1>
-    </div>
-    <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchError === true">
-        <h1 class="text-red-500 font-bold text-xl">Couldn't fetch recipes</h1>
-        <p class="text-red-400 text-lg">Check your connection</p>
-    </div>
+
+    <FetchingRecipes />
+
 </template>
 
 <script setup>
 import { useRecipeStore } from '../stores/recipeStore'
+import FetchingRecipes from './FetchingRecipes.vue';
 const recipeStore = useRecipeStore();
 recipeStore.getRecipes
 

@@ -65,12 +65,10 @@ export default {
         }
     },
     methods: {
-        async search() {
+        search() {
             const searchStore = useSearchStore();
             searchStore.searchWord = this.searchString
-            await router.push('/search/recipes')
-            window.location.reload()
-
+            router.push('/search/recipes')
         }
 
     },

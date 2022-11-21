@@ -8,7 +8,7 @@ export const useSearchStore = defineStore('search', {
         data: '',
         searchResults: '',
         singleSearchResult: '',
-        fetching: false,
+        fetching: false
     }),
     getters: {
         getRecipe(responseArray){

@@ -18,6 +18,7 @@
     </div>
     <div v-if="searchStore.searchResults === null" class="text-gray-600 text-xl font-semibold text-center">
         <h1>Nothing found on <span class="font-black text-gray-900">'{{ searchStore.searchWord }}'</span></h1>
+
     </div>
     <FloatingButton />
     <FetchingRecipes />

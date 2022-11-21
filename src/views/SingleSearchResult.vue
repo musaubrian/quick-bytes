@@ -54,7 +54,7 @@
             </p>
             <div>
                 <span class="text-gray-700 text-start w-full font-bold inline-flex items-center text-lg">process:</span>
-                <p class="text-justify px-3">{{ recipe.strInstructions }}</p>
+                <p class="text-justify px-3 text-lg">{{ recipe.strInstructions }}</p>
             </div>
             <div class="w-full inline-flex justify-center items-center text-blue-500 font-semibold cursor-pointer my-3">
                 <RouterLink to="/search/recipes" class="inline-flex justify-center items-center hover:transition-all">

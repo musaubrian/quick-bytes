@@ -1,9 +1,10 @@
+import { useLocalStorage } from "@vueuse/core";
 import { defineStore } from "pinia";
 import router from "../router";
 
 export const useSearchStore = defineStore('search', {
     state: ()=>({
-        searchWord: 'fish',
+        searchWord: useLocalStorage('searchWord', ''),
         data: '',
         searchResults: '',
         singleSearchResult: ''

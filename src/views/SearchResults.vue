@@ -13,11 +13,7 @@
 
             <span>watch on <a class="text-red-400 font-semibold" :href="recipe.strYoutube">youtube</a></span>
             <span @click="searchStore.routeToSearchedId(recipe.idMeal)"
-                class="text-gray-700 underline my-3 cursor-pointer">Show
-                full
-                recipe</span>
-
-
+                class="text-gray-700 underline my-3 cursor-pointer">Show full recipe</span>
         </div>
     </div>
     <FloatingButton />

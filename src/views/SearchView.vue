@@ -3,7 +3,7 @@
         <img src="../assets/steak.jpg" alt="noodles" class="w-full h-full object-center">
     </div>
     <form @submit.prevent="search()" class="w-full flex flex-col  justify-center items-center relative">
-        <input type="search" id="search"
+        <input type="search" id="search" required
             class="p-3 rounded-lg w-10/12 md:w-5/12 outline-none focus:ring-2 focus:border-transparent text-lg transition-all bg-gray-50"
             placeholder="Let's find your meal" v-model="searchString" />
         <button type="submit"

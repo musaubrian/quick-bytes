@@ -69,6 +69,7 @@ export default {
             const searchStore = useSearchStore();
             searchStore.searchWord = this.searchString
             router.push('/search/recipes')
+            window.location.reload()
         }
 
     },

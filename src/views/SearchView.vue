@@ -25,7 +25,7 @@ export default {
         search() {
             const searchStore = useSearchStore();
             searchStore.searchWord = this.searchString
-            router.push('/recipes')
+            router.push('/search/recipes')
         }
 
     },

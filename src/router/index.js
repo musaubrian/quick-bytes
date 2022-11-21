@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import HomeView from "../views/HomeView.vue"
 import signInView from "../views/SignedInView.vue"
+import SingleSearch from "../views/SingleSearchResult.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,8 +33,8 @@ const router = createRouter({
       component: () => import('../views/AddRecipes.vue')
     },
     {
-      path: '/recipes/:id',
-      name: 'recipe',
+      path: '/recipe/:id',
+      name: 'supa-recipe',
       component: ()=> import('../views/SingleRecipe.vue')
     },
     {
@@ -41,9 +43,14 @@ const router = createRouter({
       component: ()=> import('../views/SearchView.vue')
     },
     {
-      path: '/recipes',
+      path: '/search/recipes',
       name: 'recipes',
       component: ()=> import('../views/SearchResults.vue')
+    },
+    {
+      path: '/search/recipes/:id',
+      name: 'recipe',
+      component: SingleSearch
     }
   ]
 })

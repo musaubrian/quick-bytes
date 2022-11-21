@@ -1,10 +1,12 @@
 import { defineStore } from "pinia";
+import router from "../router";
 
 export const useSearchStore = defineStore('search', {
     state: ()=>({
         searchWord: 'fish',
         data: '',
-        searchResults: ''
+        searchResults: '',
+        singleSearchResult: ''
     }),
     getters: {
         getRecipe(responseArray){
@@ -25,6 +27,21 @@ export const useSearchStore = defineStore('search', {
         }
     },
     actions: {
-        
+        async fetchSingleRecipe(id){
+            var url = `https://themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+            var options = {
+                method: 'GET',
+                redirect: 'follow'
+              };
+            console.log(url)
+            await fetch(url, options)
+            .then((response)=> (response.json()))
+            .then(result => (this.singleSearchResult = result.meals))
+        },
+        routeToSearchedId(id){
+            router.replace('/search/recipes/'+id)
+            this.fetchSingleRecipe(id)
+        }
+
     }
 })

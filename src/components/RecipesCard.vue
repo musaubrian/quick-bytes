@@ -40,21 +40,16 @@
             <span @click="recipeStore.routeToId(recipe.id)" class="text-gray-700 underline my-3 cursor-pointer">Show
                 full
                 recipe</span>
-
-
         </div>
     </div>
-    <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchingRecipes === true">
-        <h1 class="text-lg text-gray-600 font-bold">Fetching your recipes...</h1>
-    </div>
-    <div class="flex flex-col justify-center items-center mt-3" v-if="recipeStore.fetchError === true">
-        <h1 class="text-red-500 font-bold text-xl">Couldn't fetch recipes</h1>
-        <p class="text-red-400 text-lg">Check your connection</p>
-    </div>
+
+    <FetchingRecipes />
+
 </template>
 
 <script setup>
 import { useRecipeStore } from '../stores/recipeStore'
+import FetchingRecipes from './FetchingRecipes.vue';
 const recipeStore = useRecipeStore();
 recipeStore.getRecipes
 

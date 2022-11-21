@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 export const useSearchStore = defineStore('search', {
     state: ()=>({
-        searchWord: 'meatloaf',
+        searchWord: 'fish',
         data: '',
         searchResults: ''
     }),
@@ -23,5 +23,8 @@ export const useSearchStore = defineStore('search', {
                 console.log(url)
                 console.log('results:',this.searchResults)
         }
+    },
+    actions: {
+        
     }
 })

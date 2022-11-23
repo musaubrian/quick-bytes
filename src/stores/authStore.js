@@ -10,8 +10,19 @@ export const useAuthStore = defineStore("fireAuth", {
         signUpSuccess: false,
         signInError: false,
         signOutError: false,
+        login: true,
+        register: false
     }),
     actions: {
+        routeToLogin(){
+            router.push('/auth')
+            this.register = false
+            this.login = true
+        },
+        routeToRegister(){
+            this.login = false
+            this.register = true;
+        },
         async signUp(email, password) {
             const {data, error} = await supabase.auth.signUp({
                 email: email,

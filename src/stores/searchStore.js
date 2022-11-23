@@ -11,9 +11,6 @@ export const useSearchStore = defineStore('search', {
         fetching: false
     }),
     getters: {
-        getRecipe(responseArray){
-            this.searchResults = responseArray
-        },
         async searchForRecipe(){
             var url = `https://themealdb.com/api/json/v1/1/search.php?s=${this.searchWord}`
             var requestOptions = {

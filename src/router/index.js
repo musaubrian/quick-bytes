@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from "../views/HomeView.vue"
 import signInView from "../views/SignedInView.vue"
 import SingleSearch from "../views/SingleSearchResult.vue"
-import ErrorView from '../views/ErrorView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -51,11 +50,6 @@ const router = createRouter({
       path: '/search/recipes/:id',
       name: 'recipe',
       component: SingleSearch
-    },
-    {
-      path: '/:pathMatch(.*)*',
-      name: '404',
-      component: ErrorView
     }
   ]
 })

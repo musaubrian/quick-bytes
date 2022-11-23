@@ -7,7 +7,7 @@
             class="p-3 rounded-lg w-10/12 md:w-5/12 drop-shadow-xl outline-none text-lg transition-all bg-gray-50"
             placeholder="Let's find your meal" v-model="searchString" />
         <button type="submit"
-            class="inline-flex items-center justify-center bg-blue-400 p-3 rounded-lg mt-2 capitalize text-gray-100 md:w-1/6 active:bg-blue-600 font-semibold transition-all">search</button>
+            class="inline-flex items-center justify-center bg-blue-400 px-5 py-3 rounded-lg mt-3 capitalize text-gray-100 md:w-1/6 active:bg-blue-600 font-semibold transition-all">search</button>
     </form>
 </template>
 

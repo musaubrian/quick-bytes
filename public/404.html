@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=https://quickbyts.netlify.app" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/svg">
+    <!-- <meta http-equiv="refresh" content="0; url=https://quickbyts.netlify.app" /> -->
     <title>Redirect</title>
   </head>
   <style>
@@ -17,29 +18,49 @@
       justify-content: center;
       align-items: center;
     }
+    h1 {
+      text-align: center;
+    }
     a {
-      background-color: #1c65ec;
+      background-color: #3a77e9;
       font-size: large;
       margin-top: 1rem;
       margin-bottom: 1rem;
-      color: #dfdfdf;
+      color: #f0f0f0;
       font-weight: bold;
       transition: all;
-      border-radius: 30px;
+      border-radius: 20px;
       padding: 1rem;
       text-decoration: none;
     }
     a:active {
-      background-color: #113f96;
+      background-color: #1f65e6;
+      box-shadow: 2px 2px 10px #b3b3b3;
       transition: all;
     }
+
+    .spin {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        border: 5px solid #dadada;
+        border-radius: 50%;
+        border-top-color: #ff6803;
+        animation: spin 700ms linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
   </style>
   <body>
-    <h1>you are not redirected automatically, follow this</h1>
+    <div class="spin"></div>
+    <h1>If not redirected automatically, click this</h1>
     <a
-      href="https://quickbyts.netlify.app"
+      href=#"
       class="bg-blue-400 p-4 rounded-md text-xl my-3 text-gray-50 font-bold active:bg-blue-600 transition-all"
       >Take me home</a
-    >.
+    >
   </body>
 </html>

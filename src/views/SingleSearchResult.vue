@@ -2,7 +2,7 @@
     <div v-for="recipe in searchStore.singleSearchResult" :key="recipe.idMeal">
         <img :src="recipe.strMealThumb" alt="recipe image" v-if="recipe.strMealThumb != ''" class="h-40 w-full object-cover
             object-center m-auto shadow-md">
-        <img src="../assets/notfound.png" alt="no image available" v-else="recipe.strMealThumb === ''"
+        <img src="../assets/notfound.png" alt="no image available" v-else
             class="h-40 w-full object-cover object-center m-auto shadow-md">
         <h1 class="text-gray-800 text-2xl md:text-3xl text-center font-bold py-2 capitalize">{{ recipe.strMeal }}</h1>
 

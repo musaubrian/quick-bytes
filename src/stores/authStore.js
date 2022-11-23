@@ -32,9 +32,12 @@ export const useAuthStore = defineStore("fireAuth", {
                 this.signUpSuccess = true
             }
             if(error){
+                this.signUpSuccess = false
                 this.signUpError = true
+                this.login = false
+                this.register = true
+                router.push('/auth')
             }
-            console.log(this.user)
         },
         async signIn(email, password) {
             const {data, error} = await supabase.auth.signInWithPassword({
@@ -43,7 +46,7 @@ export const useAuthStore = defineStore("fireAuth", {
             })
             if (error){
                 this.signInError = true
-                router.push('/signin')
+                router.push('/auth')
             } else if(data) {
                 this.isLoggedIn = true
                 router.push('/')

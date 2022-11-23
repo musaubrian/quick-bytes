@@ -29,6 +29,7 @@ export const useAuthStore = defineStore("fireAuth", {
                 password: password
             })
             if (data){
+                this.signUpError = false
                 this.signUpSuccess = true
             }
             if(error){

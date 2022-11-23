@@ -1,8 +1,8 @@
 <template>
-    <div v-for="recipe in recipeStore.singleRecipe">
+    <div v-for="recipe in recipeStore.singleRecipe" :key="recipe.id">
         <img :src="recipe.imgLink" alt="recipe image" v-if="recipe.imgLink != ''" class="h-40 w-full object-cover
             object-center m-auto shadow-md">
-        <img src="../assets/notfound.png" alt="no image available" v-else="recipe.imgLink === null"
+        <img src="../assets/notfound.png" alt="no image available" v-else
             class="h-40 w-full object-cover object-center m-auto shadow-md">
 
         <h1 class=" text-gray-700 text-2xl capitalize md:text-3xl mt-1 text-center font-bold">{{

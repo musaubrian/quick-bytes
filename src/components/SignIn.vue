@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="signIn()" class="flex flex-col flex-nowrap justify-center items-center h-full w-5/6">
+    <form @submit.prevent="logInToSite()" class="flex flex-col flex-nowrap justify-center items-center h-full w-5/6">
         <h1 class="text-4xl font-bold">QuickBytes</h1>
         <h2 class="text-gray-600 text-xl">LogIn</h2>
         <p class="text-gray-800">Tasty treats quickly</p>
@@ -19,7 +19,7 @@
     <div class="fixed top-0 left-0 h-10 mt-5 bg-green-30 p-5 flex flex-col w-full items-center justify-center"
         v-if="authStore.signInError === true">
         <h1 class="text-red-500 text-xl">Error Logging in</h1>
-        <p class="text-red-400 text-lg">Try Registering</p>
+        <p class="text-red-400 text-md md:text-lg">Try Registering or check your network</p>
     </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
         }
     },
     methods: {
-        signIn() {
+        logInToSite() {
             const authStore = useAuthStore();
             authStore.signIn(this.email, this.password)
         }

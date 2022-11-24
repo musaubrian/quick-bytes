@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="uploadRecipes()" class="w-full h-full mb-4 flex flex-col items-center justify-center">
         <label for="recipe-title" class="w-10/12 text-left md:w-6/12 mt-3 text-gray-600">Recipe Image:</label>
-        <input type="file" accept="image/*" @change="onUpload(string)"
+        <input type="file" accept="image/*" @change="onUpload()"
             class="block w-10/12 md:w-6/12 text-sm mt-1 text-gray-800 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-200 focus:outline-none dark:bg-gray-700 dark:border-gray-700 dark:placeholder-gray-100"
             id="file_input" />
 
@@ -50,7 +50,7 @@ export default {
         }
     },
     methods: {
-        onUpload(string) {
+        onUpload() {
             const recipeStore = useRecipeStore();
             const fileSelector = document.getElementById('file_input')
             let files = fileSelector.files[0];

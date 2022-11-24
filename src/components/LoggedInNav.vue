@@ -54,11 +54,6 @@
 <script setup>
 import { ref } from 'vue';
 import { useAuthStore } from '../stores/authStore';
-// import router from '../router';
-
-// const routeToSearch = () => {
-//     router.push('/search')
-// }
 
 const dropDown = ref(false);
 const storeAuth = useAuthStore();

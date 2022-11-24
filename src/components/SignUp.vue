@@ -17,7 +17,7 @@
             class="bg-orange-500 p-3 rounded-xl text-white font-semibold w-4/12 active:bg-orange-600 transition-all">Register</button>
     </form>
     <div class="fixed top-0 left-0 h-auto mt-3 w-full flex justify-center items-center" v-if="authStore.signUpSuccess">
-        <h1 class="text-green-400">Check your email</h1>
+        <h3 class="text-green-400">Check your email</h3>
     </div>
     <div class="fixed top-1 left-0 h-auto mt-3 w-full flex justify-center items-center"
         v-if="authStore.signUpError === true">

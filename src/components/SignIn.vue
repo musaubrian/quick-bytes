@@ -18,7 +18,7 @@
     </form>
     <div class="fixed top-0 left-0 h-10 mt-5 bg-green-30 p-5 flex flex-col w-full items-center justify-center"
         v-if="authStore.signInError === true">
-        <h1 class="text-red-500 text-xl">Error Logging in</h1>
+        <h3 class="text-red-500 text-xl">Error logging in</h3>
         <p class="text-red-400 text-md md:text-lg">Try Registering or check your network</p>
     </div>
 </template>

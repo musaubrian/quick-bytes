@@ -31,14 +31,10 @@
                 recipe</span>
         </div>
     </div>
-
-    <FetchingRecipes />
-
 </template>
 
 <script setup>
 import { useRecipeStore } from '../stores/recipeStore'
-import FetchingRecipes from './FetchingRecipes.vue';
 const recipeStore = useRecipeStore();
 recipeStore.getRecipes
 

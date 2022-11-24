@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center items-center mt-20">
+    <div class="flex justify-center items-center" style="height: 100vh;">
         <SignIn v-if="authStore.login === true" />
         <SignUp v-if="authStore.register === true" />
     </div>

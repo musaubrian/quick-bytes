@@ -19,7 +19,8 @@ export const useRecipeStore = defineStore('recipes', {
         uploading: false,
         imglink: '',
         baseString: '',
-        fileStuff: ''
+        fileStuff: '',
+        fromSupabase: true
     }),
     getters: {
         async getRecipes(){

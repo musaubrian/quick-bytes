@@ -37,11 +37,6 @@ const router = createRouter({
       component: ()=> import('../views/SearchView.vue')
     },
     {
-      path: '/search/recipes',
-      name: 'recipes',
-      component: ()=> import('../views/SearchResults.vue')
-    },
-    {
       path: '/search/recipes/:id',
       name: 'recipe',
       component: SingleSearch

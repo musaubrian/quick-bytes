@@ -78,6 +78,7 @@ export const useRecipeStore = defineStore('recipes', {
             } this.fetchingRecipes = false
         },
         routeToId(id){
+            this.fromSupabase = true
             router.push('/recipe/' + id)
             this.getSingleRecipe(id)
         }

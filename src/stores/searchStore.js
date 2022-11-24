@@ -27,7 +27,8 @@ export const useSearchStore = defineStore('search', {
     },
     actions: {
         async fetchSingleRecipe(id){
-            this.fetching = true
+            const recipeStore = useRecipeStore()
+            recipeStore.fetchingRecipes = true
             let url = `https://themealdb.com/api/json/v1/1/lookup.php?i=${id}`
             let options = {
                 method: 'GET',
@@ -36,10 +37,12 @@ export const useSearchStore = defineStore('search', {
             await fetch(url, options)
             .then((response)=> (response.json()))
             .then(result => (this.singleSearchResult = result.meals));
-            this.fetching = false
+            recipeStore.fetchingRecipes = false
         },
         routeToSearchedId(id){
-            router.replace('/search/recipes/'+id)
+            const recipeStore = useRecipeStore();
+            recipeStore.fromSupabase = false
+            router.replace('/recipe/'+id)
             this.fetchSingleRecipe(id)
         }
 

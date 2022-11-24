@@ -4,25 +4,25 @@
 
 import { mount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
-import SignIn from "../SignIn.vue";
+import SignUp from "../SignUp.vue";
 import pinia from "/src/pinia.js";
 
-describe("test sign in", () => {
+describe("form is rendered", () => {
   it("if form is displayed", () => {
-    const wrapper = mount(SignIn, pinia);
+    const wrapper = mount(SignUp, pinia);
     expect(wrapper.find("form").exists()).toBeTruthy();
   });
   it("inputs exist", () => {
-    const wrapper = mount(SignIn);
+    const wrapper = mount(SignUp);
     expect(wrapper.find("form > input").exists()).toBeTruthy();
   });
   it("button submits", async () => {
-    const wrapper = mount(SignIn);
+    const wrapper = mount(SignUp);
     await wrapper.find("button").trigger("click");
     expect(wrapper.emitted()).toHaveProperty("click");
   });
   it("should not find Error message", () => {
-    const wrapper = mount(SignIn);
+    const wrapper = mount(SignUp);
     expect(wrapper.find("h3").exists()).toBeFalsy();
   });
 });

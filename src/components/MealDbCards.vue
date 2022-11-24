@@ -16,7 +16,8 @@
         </div>
     </div>
     <div v-if="searchStore.searchResults === null" class="text-gray-600 text-xl font-semibold text-center">
-        <h1>Nothing found on <span class="font-black text-gray-900">'{{ searchStore.searchWord }}'</span></h1>
+        <h2 class="text-lg">Nothing found on <span class="font-black text-gray-900">'{{ searchStore.searchWord
+        }}'</span></h2>
 
     </div>
 </template>

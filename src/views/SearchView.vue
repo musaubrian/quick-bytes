@@ -16,6 +16,7 @@ import { useSearchStore } from '../stores/searchStore'
 import { useAuthStore } from '../stores/authStore';
 import router from '../router';
 import { nextTick, onMounted, ref } from 'vue';
+import { useRecipeStore } from '../stores/recipeStore';
 export default {
     data() {
         return {
@@ -25,8 +26,10 @@ export default {
     methods: {
         lonePageSearch() {
             const searchStore = useSearchStore();
+            const recipeStore = useRecipeStore();
             searchStore.searchWord = this.searchString
-            router.push('/search/recipes')
+            recipeStore.fromSupabase = false
+            router.push('/')
         }
     },
     setup() {

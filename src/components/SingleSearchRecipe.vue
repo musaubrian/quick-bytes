@@ -51,21 +51,20 @@
                 }}</span>
                 <span class="py-1 px-2 w-3/6" v-if="recipe.strIngredient20 != ''">-{{ recipe.strIngredient20
                 }}</span>
+                <span class="py-1 px-2 w-3/6" v-if="recipe.strIngredient21 != ''">-{{ recipe.strIngredient21
+                }}</span>
             </p>
             <div>
                 <span class="text-gray-700 text-start w-full font-bold inline-flex items-center text-lg">process:</span>
                 <p class="text-justify px-3 text-lg">{{ recipe.strInstructions }}</p>
             </div>
             <div class="w-full inline-flex justify-center items-center text-blue-500 font-semibold cursor-pointer my-3">
-                <RouterLink to="/search/recipes" class="inline-flex justify-center items-center hover:transition-all">
+                <RouterLink to="/" class="inline-flex justify-center items-center hover:transition-all">
                     <i class="material-icons text-sm font-bold">arrow_back</i>
                     Back home
                 </RouterLink>
             </div>
         </div>
-    </div>
-    <div class="flex flex-col justify-center items-center mt-3" v-if="searchStore.fetching === true">
-        <h1 class="text-lg text-gray-600 font-bold">Getting your recipes...</h1>
     </div>
 </template>
 

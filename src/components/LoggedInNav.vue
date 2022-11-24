@@ -24,7 +24,7 @@
                 </li>
                 <li
                     class="hidden md:inline-flex md:p-2 md:bg-orange-400 md:rounded-md md:items-center active:bg-orange-600 transition-all">
-                    <button>SignOut</button>
+                    <button @click="storeAuth.logOut">SignOut</button>
                 </li>
                 <li class="p-2 inline-flex items-center md:hidden " @click="dropDown = !dropDown">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -51,26 +51,16 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
 import { useAuthStore } from '../stores/authStore';
-import router from '../router';
+// import router from '../router';
 
-export default {
-    methods: {
-        routeToSearch() {
-            router.push('/search')
-        }
+// const routeToSearch = () => {
+//     router.push('/search')
+// }
 
-    },
-    setup() {
-        const dropDown = ref(false);
-        const storeAuth = useAuthStore();
-        return {
-            dropDown,
-            storeAuth
-        }
-    }
-}
+const dropDown = ref(false);
+const storeAuth = useAuthStore();
 
 </script>

@@ -19,7 +19,8 @@ export const useRecipeStore = defineStore('recipes', {
         uploading: false,
         imglink: '',
         baseString: '',
-        fileStuff: ''
+        fileStuff: '',
+        fromSupabase: true
     }),
     getters: {
         async getRecipes(){
@@ -77,6 +78,7 @@ export const useRecipeStore = defineStore('recipes', {
             } this.fetchingRecipes = false
         },
         routeToId(id){
+            this.fromSupabase = true
             router.push('/recipe/' + id)
             this.getSingleRecipe(id)
         }

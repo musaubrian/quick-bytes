@@ -11,5 +11,4 @@
 <script setup>
 import { useRecipeStore } from '../stores/recipeStore'
 const recipeStore = useRecipeStore();
-recipeStore.getRecipes
 </script>

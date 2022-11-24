@@ -1,5 +1,4 @@
 <template>
-    <LoggedInNav />
     <div class="grid grid-cols-4 gap-4 w-auto mt-4 px-5 md:px-10 mb-20">
         <div class="col-span-4 md:col-span-2 border-2 border-gray-300 rounded-lg flex flex-col px-4 py-2 items-center justify-around capitalize shadow-md"
             v-for="recipe in searchStore.searchResults" :key="recipe.idMeal">
@@ -20,22 +19,11 @@
         <h1>Nothing found on <span class="font-black text-gray-900">'{{ searchStore.searchWord }}'</span></h1>
 
     </div>
-    <FloatingButton />
-    <FetchingRecipes />
 </template>
 
 <script setup>
 import { useSearchStore } from '../stores/searchStore';
-import { useAuthStore } from '../stores/authStore';
-import router from '../router';
-import FetchingRecipes from '../components/FetchingRecipes.vue';
-import FloatingButton from '../components/FloatingButton.vue';
-import LoggedInNav from '../components/LoggedInNav.vue';
 
 const searchStore = useSearchStore();
-const authStore = useAuthStore();
 searchStore.searchForRecipe
-if (authStore.isLoggedIn === false) {
-    router.push('/home')
-}
 </script>

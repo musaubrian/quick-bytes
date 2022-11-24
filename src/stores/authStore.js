@@ -49,6 +49,7 @@ export const useAuthStore = defineStore("fireAuth", {
                 this.signInError = true
                 router.push('/auth')
             } else if(data) {
+                this.signInError = false
                 this.isLoggedIn = true
                 router.push('/')
             }

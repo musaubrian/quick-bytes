@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full fixed bottom-0 mb-24 right-0 md:hidden inline-flex items-end flex-col justify-end transition duration-1000 ease-in-out"
+    <div class="w-full fixed bottom-0 mb-20 right-0 md:hidden inline-flex items-end flex-col justify-end transition duration-1000 ease-in-out"
         v-if="toggled">
         <span @click="toggleSearch()"
             class="material-icons text-gray-200 p-4 bg-orange-500 opacity-90 rounded-full cursor-pointer inline-flex items-center mr-4 active:bg-orange-600 mb-3">

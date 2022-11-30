@@ -2,7 +2,7 @@
     <div class="fixed top-0 left-0 w-full flex  justify-center items-center transition all" style="height: 100vh;">
 
         <div class="flex flex-col h-full w-full items-center justify-center p-4">
-            <div class="flex flex-col w-5/6 rounded-lg shadow-lg items-center justify-center bg-slate-400 overflow-hidden"
+            <div class="flex flex-col w-full md:w-5/6 rounded-lg shadow-lg items-center justify-center bg-slate-400 overflow-hidden"
                 style="height: 60vh;">
                 <div class="inline-flex w-full justify-end cursor-pointer">
                     <i class="material-icons py-2 px-3 text-slate-800 font-bold text-2xl"
@@ -15,9 +15,6 @@
                         class="inline-flex items-center justify-center bg-blue-500 px-5 py-3 rounded-lg mt-3 capitalize text-gray-100 md:w-1/6 active:bg-blue-600 font-semibold transition-all">search</button>
 
                 </form>
-                <div class="w-full h-10 bg-slate-400">
-                </div>
-
             </div>
 
         </div>

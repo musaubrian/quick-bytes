@@ -1,4 +1,17 @@
 <template>
+    <div class="fixed top-0 left-0 bg-black py-3 opacity-80 w-full inline-flex items-center justify-end">
+        <ul class="inline-flex text-lg text-gray-300 cursor-pointer mr-3 capitalize">
+            <li class="px-2">
+                <a href="#features">features</a>
+            </li>
+            <li class="px-2">
+                <a href="#inspiration">Inspiration</a>
+            </li>
+            <li class="px-2">
+                <a href="#links" class="transition-all">Links</a>
+            </li>
+        </ul>
+    </div>
     <div class="landing flex justify-center items-center flex-col mb-2 p-2">
         <h1 class="text-5xl md:text-6xl text-gray-50 font-bold text-center">QuickBytes</h1>
         <p class="md:text-2xl text-lg text-gray-100 font-normal my-5 text-center md:w-8/12">Every time you use the
@@ -15,21 +28,21 @@
 
         </RouterLink>
     </div>
-    <div class="flex flex-col w-full py-2 px-3 md:px-10">
+    <div class="flex flex-col w-full py-2 px-3 md:px-10" id="features">
         <div class="flex w-full flex-col md:flex-row my-3">
             <div
                 class="w-full md:w-5/6 inline-flex items-center justify-center bg-gray-200 rounded-lg overflow-hidden md:mr-2">
                 <img src="../assets/eating_together.svg" class="w-4/6 object-cover hover:scale-110 transition-all "
-                    alt="">
+                    alt="two people sitted at a table">
             </div>
             <div class="w-full md:w-5/6 flex flex-col items-center justify-center p-2 md:ml-2">
-                <h1 class="text-2xl text-center font-semibold text-gray-800">Community Inspired recipes</h1>
+                <h1 class="text-2xl text-center font-semibold text-gray-800 my-2">Community Inspired recipes</h1>
                 <p class="text-justify text-gray-700 text-lg">
                     The members can find recipes created by other people easily
                 </p>
-                <p class="text-justify text-gray-700 text-lg">
+                <span class="text-justify text-gray-700 text-lg">
                     -
-                </p>
+                </span>
 
             </div>
         </div>
@@ -40,19 +53,19 @@
                     alt="woman holding a magnifying glass">
             </div>
             <div class="w-full md:w-5/6 flex flex-col items-center justify-center p-2 md:mr-2">
-                <h1 class="text-2xl text-center font-semibold text-gray-800 mb-2">Search for recipes</h1>
+                <h1 class="text-2xl text-center font-semibold text-gray-800 my-2">Search for recipes</h1>
                 <p class="text-justify text-gray-700 text-lg">
                     The members can search for recipes from an external database incase they are unable to find what
                     they want
                 </p>
-                <p class="text-justify text-gray-700 text-lg">
+                <span class="text-justify text-gray-700 text-lg">
                     -
-                </p>
+                </span>
             </div>
             <div
                 class="w-full hidden md:w-5/6 md:inline-flex items-center justify-center border-2 border-gray-300 rounded-lg overflow-hidden md:ml-2">
                 <img src="../assets/search.svg" class="object-cover hover:scale-110 w-4/6 transition-all "
-                    alt="woman holding a magnifying glass">
+                    alt="man grilling meat">
             </div>
         </div>
         <div class="flex w-full flex-col md:flex-row my-3">
@@ -61,20 +74,20 @@
                 <img src="../assets/barbaque.svg" class="object-cover hover:scale-110 w-4/6 transition-all " alt="">
             </div>
             <div class="w-full md:w-5/6 flex flex-col items-center justify-center p-2 md:ml-2">
-                <h1 class="text-2xl text-center font-semibold text-gray-800 mb-2">Add recipes</h1>
+                <h1 class="text-2xl text-center font-semibold text-gray-800 my-2">Add recipes</h1>
                 <p class="text-justify text-gray-700 text-lg">
                     The members can contribute to the community by adding more recipes to the database
                 </p>
-                <p class="text-justify text-gray-700 text-lg">
+                <span class="text-justify text-gray-700 text-lg">
                     -
-                </p>
+                </span>
             </div>
 
         </div>
 
     </div>
     <div>
-        <div class="p-4 bg-gray-100 flex flex-col items-center">
+        <div class="p-4 bg-gray-100 flex flex-col items-center" id="inspiration">
             <h1 class="text-2xl font-semibold text-gray-800 text-center underline">Inspiration</h1>
             <div class="mt-1 md:text-lg text-gray-800 md:px-10">
                 <p class="text-justify">I built this project as there seemed to be a recurring
@@ -106,7 +119,7 @@
             </div>
         </div>
     </div>
-    <div class="p-3 bg-gray-200 flex flex-col justify-center items-center">
+    <div class="p-3 bg-gray-200 flex flex-col justify-center items-center" id="links">
         <h1 class="text-gray-900 font-semibold text-2xl underline">Links</h1>
         <ul class="flex flex-col md:flex-row capitalize w-3/6 items-center justify-evenly">
 

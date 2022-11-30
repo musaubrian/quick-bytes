@@ -15,8 +15,7 @@
 
         </RouterLink>
     </div>
-    <div class="flex flex-col w-full p-2">
-        <!-- <h1 class="text-2xl text-gray-700 text-center font-semi-bold">Features</h1> -->
+    <div class="flex flex-col w-full py-2 px-3 md:px-10">
         <div class="flex w-full flex-col md:flex-row my-3">
             <div
                 class="w-full md:w-5/6 inline-flex items-center justify-center bg-gray-200 rounded-lg overflow-hidden md:mr-2">
@@ -77,7 +76,7 @@
     <div>
         <div class="p-4 bg-gray-100 flex flex-col items-center">
             <h1 class="text-2xl font-semibold text-gray-800 text-center underline">Inspiration</h1>
-            <div class="mt-1 md:text-lg text-gray-800">
+            <div class="mt-1 md:text-lg text-gray-800 md:px-10">
                 <p class="text-justify">I built this project as there seemed to be a recurring
                     theme around my
                     friends.
@@ -106,6 +105,22 @@
                 </p>
             </div>
         </div>
+    </div>
+    <div class="p-3 bg-gray-200 flex flex-col justify-center items-center">
+        <h1 class="text-gray-900 font-semibold text-2xl underline">Links</h1>
+        <ul class="flex flex-col md:flex-row capitalize w-3/6 items-center justify-evenly">
+
+            <li class="text-lg md:p-2 py-1 text-gray-800 hover:opacity-70">
+                <a href="https://github.com/musaubrian/quick-bytes" target="_blank">github</a>
+            </li>
+            <li class="text-lg md:p-2 py-1 text-gray-800 hover:opacity-70">
+                <a href="https://twitter.com/_musaubrian" target="_blank">twitter</a>
+            </li>
+            <li class="text-lg md:p-2 py-1 text-gray-800 hover:opacity-70">
+                <a href="https://www.linkedin.com/in/ernest-musau/" target="_blank">linkedin</a>
+            </li>
+
+        </ul>
     </div>
 </template>
 <style>

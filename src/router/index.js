@@ -7,7 +7,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "taste",
+      name: "signedin",
       component: signInView,
     },
     {
@@ -19,11 +19,6 @@ const router = createRouter({
       path: "/auth",
       name: "auth",
       component: () => import("../views/AuthView.vue"),
-    },
-    {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
     },
     {
       path: "/add",

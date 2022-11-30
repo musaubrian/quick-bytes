@@ -1,10 +1,19 @@
 <template>
-    <div class="landing flex justify-center items-center flex-col mb-2">
-        <h1 class="text-5xl md:text-6xl text-gray-200 font-bold text-center">QuickBytes</h1>
-        <p class="md:text-2xl text-lg text-gray-300 font-normal my-5 text-center md:w-8/12">Every time you use the
+    <div class="landing flex justify-center items-center flex-col mb-2 p-2">
+        <h1 class="text-5xl md:text-6xl text-gray-50 font-bold text-center">QuickBytes</h1>
+        <p class="md:text-2xl text-lg text-gray-100 font-normal my-5 text-center md:w-8/12">Every time you use the
             word
             ‘healthy,’ you lose. The key is to make yummy, delicious food that happens to be healthy.
         </p>
+        <RouterLink to="/"
+            class="bg-orange-500 inline-flex items-center justify-center px-3 py-2 text-gray-100 text-xl font-semibold rounded-lg hover: transition-all active:bg-orange-600">
+            <span class="capitalize p-2 hover:mr-2 transition-all">let's go</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="w-6 h-6 hover:ml-2 transition-all">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+
+        </RouterLink>
     </div>
     <div class="flex flex-col w-full p-2">
         <!-- <h1 class="text-2xl text-gray-700 text-center font-semi-bold">Features</h1> -->
@@ -66,7 +75,37 @@
 
     </div>
     <div>
-        <h1>About</h1>
+        <div class="p-4 bg-gray-100 flex flex-col items-center">
+            <h1 class="text-2xl font-semibold text-gray-800 text-center underline">Inspiration</h1>
+            <div class="mt-1 md:text-lg text-gray-800">
+                <p class="text-justify">I built this project as there seemed to be a recurring
+                    theme around my
+                    friends.
+                    They couldn't decide on what meal they should prepare And a friend of mine suggested a <em>meal
+                        lookup</em> kind of tool</p>
+                <p class="text-justify py-2">
+                    Now this already exist, but most o them are paid for, riddled with <b>ads</b> or the ingredients
+                    used
+                    are
+                    not readily available.
+                    I wanted it to be different by making it free, adding an option to add your
+                    own
+                    recipes, search for
+                    recipes in the projects database and from an external database(an api)
+                </p>
+                <p class="text-justify py-2">
+                    I did some research on social media and coincidentally found that one of my friends was working on a
+                    similar *<em>tool</em>
+                    Although his tool was on the app you can download
+                    (<a href="https://twitter.com/PikaRecipes" target="_blank"
+                        class="text-orange-500 font-semibold underline">pika recipes</a>)
+                </p>
+                <p class="text-justify py-2">
+                    Decided use to that as a reference and build a web version of it as a sort of
+                    <b>proof of concept</b>
+                </p>
+            </div>
+        </div>
     </div>
 </template>
 <style>

@@ -35,11 +35,6 @@ const router = createRouter({
       name: "supa-recipe",
       component: () => import("../views/SingleRecipe.vue"),
     },
-    {
-      path: "/search",
-      name: "search",
-      component: () => import("../views/SearchView.vue"),
-    },
   ],
 });
 

@@ -1,9 +1,9 @@
 <template>
-    <div class="fixed top-0 left-0 w-full flex  justify-center items-center transition all" style="height: 100vh;">
+    <div class="fixed top-0 left-0 w-full flex  justify-center items-center transition-all h-[100vh]">
 
         <div class="flex flex-col h-full w-full items-center justify-center p-4">
-            <div class="flex flex-col w-full md:w-5/6 rounded-lg shadow-lg items-center justify-center bg-slate-400 overflow-hidden"
-                style="height: 60vh;">
+            <div
+                class="flex flex-col w-full h-[40vh] md:h-[60vh] md:w-5/6 rounded-lg shadow-lg items-center justify-center bg-slate-400 overflow-hidden">
                 <div class="inline-flex w-full justify-end cursor-pointer">
                     <i class="material-icons py-2 px-3 text-slate-800 font-bold text-2xl"
                         @click="searchStore.searchBoxStatus = false">close</i>

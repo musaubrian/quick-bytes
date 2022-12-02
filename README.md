@@ -1,37 +1,48 @@
-# quick-bytes
+<h1 align="center">Welcome to quick-bytes 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/\_musaubrian" target="_blank">
+    <img alt="Twitter: \_musaubrian" src="https://img.shields.io/twitter/follow/\_musaubrian.svg?style=social" />
+  </a>
+</p>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/929b8d52-3a42-4201-aada-f06368afb603/deploy-status)](https://app.netlify.com/sites/quickbyts/deploys)
+> recipe website
 
-This template should help get you started developing with Vue 3 in Vite.
+### 🏠 [Homepage](https://quickbyts.netlify.app)
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Install
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Usage
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+## Run tests
 
 ```sh
-npm run build
+npm run test
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Author
 
-```sh
-npm run lint
-```
+👤 **Enrest Musau(musaubrian)**
+
+* Website: musaubrian.netlify.app
+* Twitter: [@\_musaubrian](https://twitter.com/\_musaubrian)
+* Github: [@musaubrian](https://github.com/musaubrian)
+* LinkedIn: [@ernest-musau](https://linkedin.com/in/ernest-musau)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

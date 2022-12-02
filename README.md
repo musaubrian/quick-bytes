@@ -22,6 +22,8 @@
 ## Install
 
 ```sh
+git clone https://github.com/musaubrian/quick-bytes.git
+cd quick-bytes
 npm install
 ```
 

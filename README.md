@@ -1,5 +1,9 @@
 <h1 align="center">Welcome to quick-bytes 👋</h1>
 <p>
+
+  <a href="https://www.codefactor.io/repository/github/musaubrian/quick-bytes">
+    <img src="https://www.codefactor.io/repository/github/musaubrian/quick-bytes/badge"alt="CodeFactor" />
+  </a>
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>

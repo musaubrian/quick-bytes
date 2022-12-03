@@ -7,7 +7,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "taste",
+      name: "signedin",
       component: signInView,
     },
     {
@@ -21,11 +21,6 @@ const router = createRouter({
       component: () => import("../views/AuthView.vue"),
     },
     {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
-    },
-    {
       path: "/add",
       name: "add-recipes",
       component: () => import("../views/AddRecipes.vue"),
@@ -34,11 +29,6 @@ const router = createRouter({
       path: "/recipe/:id",
       name: "supa-recipe",
       component: () => import("../views/SingleRecipe.vue"),
-    },
-    {
-      path: "/search",
-      name: "search",
-      component: () => import("../views/SearchView.vue"),
     },
   ],
 });

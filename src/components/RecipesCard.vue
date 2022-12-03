@@ -5,27 +5,15 @@
             <div class="inline-flex w-full justify-end py-2">
                 <div class="w-full object-cover">
                     <img :src="recipe.imgLink" alt="recipe image" v-if="recipe.imgLink != ''"
-                        class="w-full h-11 rounded-full pr-1 object-cover object-center hover:brightness-50 hover:scale-105">
+                        class="w-full h-20 rounded-full pr-1 object-cover object-center hover:brightness-50">
                 </div>
-                <span
-                    class=" bg-blue-500 text-gray-100 p-2 rounded-full text-xs text-center inline-flex items-center justify-center">
-                    <i class="material-icons text-sm text-center">alarm</i>
-                    {{ recipe.duration }}mins
-                </span>
+
             </div>
             <h1 class="text-gray-800 text-2xl text-center font-bold">{{ recipe.title }}</h1>
-            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center text-lg">Ingredients:</span>
-            <p class="text-start ml-2 mb-2 w-full font-normal text-gray-700">
-                {{
-                        recipe.ingredients
-                }}</p>
-
-            <span class="text-gray-700 text-start w-full font-bold inline-flex items-center text-lg">Possible allergens:
-            </span>
-            <p class="text-start ml-2 mb-2 w-full font-normal  text-orange-500">
-                {{
-                        recipe.allergen
-                }}</p>
+            <span class="text-gray-700 text- inline-flex items-center justify-center">
+                time
+                <i class="material-icons text-lg pr-1 text-blue-600">alarm</i>:
+                {{ recipe.duration }}mins</span>
             <span @click="recipeStore.routeToId(recipe.id)" class="text-gray-700 underline my-2 cursor-pointer">Show
                 full
                 recipe</span>

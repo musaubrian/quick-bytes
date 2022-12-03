@@ -96,7 +96,7 @@
                     They couldn't decide on what meal they should prepare And a friend of mine suggested a <em>meal
                         lookup</em> kind of tool</p>
                 <p class="text-justify py-2">
-                    Now this already exist, but most o them are paid for, riddled with <b>ads</b> or the ingredients
+                    Now these already exist, but most of them are paid for, riddled with <b>ads</b> or the ingredients
                     used
                     are
                     not readily available.

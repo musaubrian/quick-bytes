@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed top-0 left-0 w-full flex  justify-center items-center transition-all h-[100vh]">
+    <div class="fixed top-0 left-0 w-full flex  justify-center items-center transition-all h-[70vh] md:h-[100vh]">
 
         <div class="flex flex-col h-full w-full items-center justify-center p-4">
             <div

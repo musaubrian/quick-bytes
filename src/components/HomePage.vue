@@ -18,7 +18,7 @@
         </div>
     </div>
 </template>
-<script setup>
+<script setup lang="js">
 import router from '../router';
 import { useAuthStore } from '../stores/authStore';
 

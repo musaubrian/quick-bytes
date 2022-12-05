@@ -51,7 +51,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="js">
 import { ref } from 'vue';
 import { useAuthStore } from '../stores/authStore';
 import { useSearchStore } from '../stores/searchStore';

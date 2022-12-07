@@ -1,3 +1,4 @@
+//handles the recipe's states
 import { decode } from "base64-arraybuffer";
 import { defineStore } from "pinia";
 import router from "../router";
@@ -23,6 +24,7 @@ export const useRecipeStore = defineStore("recipes", {
   }),
   getters: {
     async getRecipes() {
+      //fetch the recipes from supabase
       this.fetchingRecipes = true;
       const { data, error } = await supabase.from("qb-recipes").select();
 
@@ -36,6 +38,11 @@ export const useRecipeStore = defineStore("recipes", {
   },
   actions: {
     async uploadImage(str) {
+      /*
+      does the the actual uploading to supabase
+      Args::
+        str: the base64 encoded string
+      */
       const { data, error } = await supabase.storage
         .from("recipes")
         .upload("images/" + this.fileStuff.name, decode(str), {
@@ -69,6 +76,12 @@ export const useRecipeStore = defineStore("recipes", {
       router.push("/");
     },
     async getSingleRecipe(id) {
+      /*
+      gets a single recipe's content using it's id from
+        the supabase database
+      Args::
+        id: the recipes id
+      */
       this.singleRecipe = "";
       this.fetchingRecipes = true;
       const { data, error } = await supabase
@@ -83,6 +96,7 @@ export const useRecipeStore = defineStore("recipes", {
       this.fetchingRecipes = false;
     },
     routeToId(id) {
+      //redirects to the single recipes page using the id
       this.fromSupabase = true;
       router.push("/recipe/" + id);
       this.getSingleRecipe(id);

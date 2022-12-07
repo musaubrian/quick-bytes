@@ -1,3 +1,4 @@
+//handles the search featurestates
 import { useLocalStorage } from "@vueuse/core";
 import { defineStore } from "pinia";
 import router from "../router";
@@ -13,6 +14,10 @@ export const useSearchStore = defineStore("search", {
   }),
   getters: {
     async searchForRecipe() {
+      /*
+      Sends a request to theopenDb API to get recipes matching
+        the searchword(keyword) entered
+      */
       const recipeStore = useRecipeStore();
       recipeStore.fetchingRecipes = true;
       this.searchBoxStatus = false;
@@ -29,6 +34,7 @@ export const useSearchStore = defineStore("search", {
   },
   actions: {
     async fetchSingleRecipe(id) {
+      //fetches a single recipe from theOpenDb API using the recipes id
       this.searchBoxStatus = false;
       const recipeStore = useRecipeStore();
       recipeStore.fetchingRecipes = true;
@@ -43,6 +49,7 @@ export const useSearchStore = defineStore("search", {
       recipeStore.fetchingRecipes = false;
     },
     routeToSearchedId(id) {
+      //routes to the single recipe's page using its ID
       const recipeStore = useRecipeStore();
       recipeStore.fromSupabase = false;
       router.replace("/recipe/" + id);

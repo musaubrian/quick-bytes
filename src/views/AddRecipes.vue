@@ -51,12 +51,17 @@ export default {
     },
     methods: {
         onUpload() {
+            /*
+            handles the image upload to supabase storage
+            when the file input state changes
+            */
             const recipeStore = useRecipeStore();
             const fileSelector = document.getElementById('file_input')
             let files = fileSelector.files[0];
             recipeStore.fileStuff = files;
             let reader = new FileReader();
             reader.onload = function () {
+                //encodes the file contents into a base64 string
                 const string = reader.result.replace("data:", "")
                     .replace(/^.+,/, "");
                 recipeStore.baseString = string
@@ -65,6 +70,7 @@ export default {
             reader.readAsDataURL(files);
         },
         async uploadRecipes() {
+            //handles the recipe upload to the supabase database
             const recipeStore = useRecipeStore();
             recipeStore.title = this.recipeTitle
             recipeStore.ingredients = this.ingredients

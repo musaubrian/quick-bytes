@@ -15,10 +15,12 @@
 </p>
 
 
-> recipe website
+> the quick way to get recipes.
 
 ### 🏠 [Homepage](https://quickbyts.netlify.app)
-
+---
+**Read the blog**
+> 📜 [blog](https://medium.com/@musaubrian/quickbytes-8994b39dfb94)
 ## Install
 
 ```sh
@@ -38,19 +40,30 @@ npm run dev
 ```sh
 npm run test
 ```
+## Contribution
+contributions are welcomed
+- first fork the repository
+- clone the repository locally
+- work on your changes
+- create a pull request
 
 ## Author
 
 👤 **Enrest Musau(musaubrian)**
 
 * Website: musaubrian.netlify.app
-* Twitter: [@\_musaubrian](https://twitter.com/\_musaubrian)
+* Twitter: [@\_musaubrian](https://twitter.com/_musaubrian)
 * Github: [@musaubrian](https://github.com/musaubrian)
 * LinkedIn: [@ernest-musau](https://linkedin.com/in/ernest-musau)
+
+**License: MIT License**
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+----
+Check out my other projects
+[github](https://github.com/musaubrian/)
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

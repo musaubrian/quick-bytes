@@ -18,9 +18,13 @@
 > the quick way to get recipes.
 
 ### 🏠 [Homepage](https://quickbyts.netlify.app)
----
-**Read the blog**
-> 📜 [blog](https://medium.com/@musaubrian/quickbytes-8994b39dfb94)
+
+![image](https://user-images.githubusercontent.com/94367979/206263858-0da258da-f95a-4d82-8bb5-62c29b9e1ff8.png)
+
+
+> **Read the blog**
+> 📜 [Medium](https://medium.com/@musaubrian/quickbytes-8994b39dfb94)
+
 ## Install
 
 ```sh
@@ -41,6 +45,7 @@ npm run dev
 npm run test
 ```
 ## Contribution
+
 contributions are welcomed
 - first fork the repository
 - clone the repository locally

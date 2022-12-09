@@ -56,7 +56,7 @@ contributions are welcomed
 
 👤 **Enrest Musau(musaubrian)**
 
-* Website: musaubrian.netlify.app
+* Website: [portfolio](https://musaubrian.netlify.app)
 * Twitter: [@\_musaubrian](https://twitter.com/_musaubrian)
 * Github: [@musaubrian](https://github.com/musaubrian)
 * LinkedIn: [@ernest-musau](https://linkedin.com/in/ernest-musau)
